@@ -1,11 +1,13 @@
 import * as THREE from 'three'
 import Experience from "../Experience.js";
 import Room from './Room.js';
+import Holographic from "./Holographic.js";
 import Environment from "./Environment.js";
+import {EventEmitter} from "events";
 
 export default class World{
-    renderer;
     constructor(){
+        //super();
         this.experience = new Experience();
         this.sizes = this.experience.sizes;
         this.scene = this.experience.scene;
@@ -15,6 +17,7 @@ export default class World{
 
         this.resources.on("ready",()=>{
             this.room = new Room();
+            this.HolographicRobot = new Holographic();
             this.environment = new Environment();
             console.log("created room");
         })
@@ -27,7 +30,11 @@ export default class World{
     }
 
     update(){
-        
+        if(this.room)
+            this.room.update();
+        if(this.HolographicRobot){
+            this.HolographicRobot.update();
+        }
     }
 
 }

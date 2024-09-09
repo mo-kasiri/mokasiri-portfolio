@@ -8,5 +8,10 @@ export default [
         name:"screen",
         type: "videoTexture",
         path: "/textures/kda.mp4"
+    },
+    {
+        name:"holographicBot",
+        type: "glbModel",
+        path: "/models/holographicBot.glb"
     }
 ]
