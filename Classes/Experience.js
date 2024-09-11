@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import GUI from 'lil-gui'
 import {EventEmitter} from 'events';
 import Sizes from './Utils/Sizes';
 import Time from './Utils/Time';
@@ -19,6 +20,7 @@ export default class Experience{
         this.canvas = canvas;
         this.scene = new THREE.Scene();
         this.time = new Time();
+        this.gui = new GUI();
 
         this.sizes = new Sizes();
         this.camera = new Camera();

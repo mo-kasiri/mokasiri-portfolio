@@ -6,6 +6,7 @@ import Environment from "./Environment.js";
 import {EventEmitter} from "events";
 
 export default class World{
+
     constructor(){
         //super();
         this.experience = new Experience();
@@ -14,13 +15,14 @@ export default class World{
         this.canvas =this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
-
         this.resources.on("ready",()=>{
             this.room = new Room();
             this.HolographicRobot = new Holographic();
             this.environment = new Environment();
+            this.environmentMap = this.environment.environmentMap;
             console.log("created room");
         })
+
     }
 
     

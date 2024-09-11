@@ -1,12 +1,8 @@
 import * as THREE from 'three'
-import GUI from 'lil-gui'
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+
 import Experience from "../Experience";
 import holographicVertexShader from '../../shaders/Holographic/Vertex.glsl'
 import holographicFragmentShader from '../../shaders/Holographic/Fragment.glsl'
-import {EventEmitter} from "events";
-
-console.log(holographicFragmentShader)
 
 export default class Holographic{
     constructor() {
@@ -22,19 +18,13 @@ export default class Holographic{
         this.holographicBot = this.room.scene;
         this.blade = null;
         this.material = null;
-        this.gui = new GUI();
+        this.gui = this.experience.gui;
 
         this.SetModel();
-        //this.update();
 
     }
 
     SetModel(){
-       /* this.holographicBot.children.forEach(child=>{
-            child.castShadow = true;
-            child.receiveShadow = true;
-        })*/
-
         const materialParameters = {};
         materialParameters.color = '#70c1ff';
 
@@ -70,7 +60,7 @@ export default class Holographic{
         })
 
 
-
+        this.holographicBot.position.set(1.5,0,-2.50);
         this.scene.add(this.holographicBot);
         console.log(this.holographicBot);
         //this.bots.scale.set(0.01,0.01,0.01);
@@ -84,10 +74,11 @@ export default class Holographic{
     update(){
         if(this.blade){
             this.blade.rotation.y += 0.15;
+            this.holographicBot.rotation.y += 0.01;
         }
 
         if(this.holographicBot){
-            this.holographicBot.position.y = Math.sin(this.time.elapsedTime * 2) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
+            this.holographicBot.position.y = 0.6 + Math.sin(this.time.elapsedTime * 2) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
         }
         this.material.uniforms.uTime.value = this.time.elapsedTime;
 

@@ -2,7 +2,7 @@ export default [
     {
         name:"bots",
         type: "glbModel",
-        path: "/models/bots2.glb"
+        path: "/models/bots.glb"
     },
     {
         name:"screen",
