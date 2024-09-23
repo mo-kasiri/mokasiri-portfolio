@@ -4,11 +4,11 @@ export default [
         type: "glbModel",
         path: "/models/bots.glb"
     },
-    {
+    /*{
         name:"screen",
         type: "videoTexture",
         path: "/textures/kda.mp4"
-    },
+    },*/
     {
         name:"holographicBot",
         type: "glbModel",

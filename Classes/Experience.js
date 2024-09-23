@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import GUI from 'lil-gui'
+import Stats from 'stats.js'
 import {EventEmitter} from 'events';
 import Sizes from './Utils/Sizes';
 import Time from './Utils/Time';
@@ -21,6 +22,8 @@ export default class Experience{
         this.scene = new THREE.Scene();
         this.time = new Time();
         this.gui = new GUI();
+        this.stats = new Stats();
+
 
         this.sizes = new Sizes();
         this.camera = new Camera();
@@ -29,6 +32,8 @@ export default class Experience{
 
 
         this.world = new World();
+
+        this.SetStats();
 
         this.time.on("update",()=>{
             this.update();
@@ -40,13 +45,20 @@ export default class Experience{
     }
 
     resize(){
-        this.camera.resize();
         this.renderer.resize();
+        this.camera.resize();
     }
 
     update(){
+        this.stats.begin();
         this.world.update();
         this.camera.update();
         this.renderer.update();
+        this.stats.end();
+    }
+
+    SetStats(){
+        this.stats.showPanel(0);
+        document.body.appendChild(this.stats.dom);
     }
 }

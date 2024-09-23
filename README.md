@@ -2,9 +2,9 @@
 
 ### This page showcases my portfolio
 
-Check the web application: https://mo-kasiri.github.io/MO-Taverse
+Check the web application: https://mo-kasiri.github.io/
 
-Checkout the source code: https://github.com/mo-kasiri/GestureLink_Metaverse
+Checkout the source code: https://github.com/mo-kasiri/
 
 ---
 ### Welcome to my portfolio!

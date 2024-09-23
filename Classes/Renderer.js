@@ -3,7 +3,7 @@ import Experience from "./Experience";
 
 
 export default class Renderer{
-    renderer;
+    //renderer;
     constructor(){
         this.experience = new Experience();
         this.sizes = this.experience.sizes;
@@ -31,14 +31,14 @@ export default class Renderer{
             this.renderer.setPixelRatio(this.sizes.pixelRatio);*/
 
             //this.renderer.setSize(sizes.width, sizes.height)
-        this.renderer.setSize(this.sizes.width, this.sizes.height);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        this.renderer.physicallyCorrectLights = true;
-        this.renderer.outputEncoding = THREE.sRGBEncoding;
-        this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        this.renderer.toneMappingExposure = 0.9;
-        this.renderer.shadowMap.enabled = true;
-        this.renderer.shadowMap.type = THREE.PCFShadowMap;
+            this.renderer.setSize(this.sizes.width, this.sizes.height);
+            this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            this.renderer.physicallyCorrectLights = true;
+            this.renderer.outputEncoding = THREE.sRGBEncoding;
+            this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            this.renderer.toneMappingExposure = 0.9;
+            this.renderer.shadowMap.enabled = true;
+            this.renderer.shadowMap.type = THREE.PCFShadowMap;
 
     }
 
@@ -59,7 +59,23 @@ export default class Renderer{
     }
 
     update(){
-        this.renderer.render(this.scene,this.camera.perspectiveCamera);
-    }
+        this.renderer.setViewport(0,0,this.sizes.width, this.sizes.height);
+        this.renderer.render(this.scene,this.camera.orthographicCamera);
+        /*this.renderer.setScissorTest(true);
+        this.renderer.setViewport(
+            this.sizes.width - this.sizes.width/3,
+            this.sizes.height - this.sizes.height/3,
+            this.sizes.width/3,
+            this.sizes.height/3
+        );
 
+        this.renderer.setScissor(
+            this.sizes.width - this.sizes.width/3,
+            this.sizes.height - this.sizes.height/3,
+            this.sizes.width/3,
+            this.sizes.height/3
+        );
+        this.renderer.render(this.scene,this.camera.perspectiveCamera);
+        this.renderer.setScissorTest(false);*/
+    }
 }

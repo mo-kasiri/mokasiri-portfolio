@@ -62,7 +62,7 @@ export default class Holographic{
 
         this.holographicBot.position.set(1.5,0,-2.50);
         this.scene.add(this.holographicBot);
-        console.log(this.holographicBot);
+        //console.log(this.holographicBot);
         //this.bots.scale.set(0.01,0.01,0.01);
     }
 
