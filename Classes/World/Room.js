@@ -8,6 +8,10 @@ import Environment from "./Environment.js";
 export default class Room{
     constructor(){
         this.experience = new Experience();
+        this.modelSize = 1;
+        this.sizes = this.experience.sizes;
+        this.aspect = this.sizes.aspect;
+        this.modelSize = this.sizes.modelsize;
         this.scene = this.experience.scene;
         this.camera = this.experience.camera;
         this.time = this.experience.time;
@@ -15,7 +19,7 @@ export default class Room{
         this.resources = this.experience.resources;
         this.room = this.resources.items.bots;
         this.bots = this.room.scene;
-        this.lerp = {current:0, target:0,ease:0.1};
+        this.lerp = {current:0, target:0, ease:0.1};
         this.blades = []
         this.mainBot = null;
         this.SetModel();
@@ -79,8 +83,9 @@ export default class Room{
                     });
             }
         })
-
-        this.bots.scale.set(0.7,0.7,0.7);
+        //this.modelSize = Math.sqrt(this.sizes.width)/70;
+        console.log(this.modelSize);
+        this.bots.scale.set(this.modelSize,this.modelSize, this.modelSize);
         this.scene.add(this.bots);
     }
 
@@ -88,12 +93,11 @@ export default class Room{
         window.addEventListener("mousemove",e=>{
             this.rotation = (e.clientX - window.innerWidth/2)/window.innerWidth*2;
             this.lerp.target = this.rotation * 0.1;
-           // console.log(this.rotation);
         })
     }
 
     resize(){
-        
+        //this.modelSize = Math.sqrt(this.sizes.width)/80;
     }
 
     update(){

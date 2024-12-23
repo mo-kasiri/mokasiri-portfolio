@@ -1,3 +1,5 @@
+/* Singleton Design Pattern */
+
 import * as THREE from 'three';
 import GUI from 'lil-gui'
 import Stats from 'stats.js'
@@ -5,7 +7,8 @@ import {EventEmitter} from 'events';
 import Sizes from './Utils/Sizes';
 import Time from './Utils/Time';
 import Camera from './Camera';
-import Renderer from "./Renderer"
+import Renderer from "./Renderer";
+import Theme from './Theme.js';
 
 import World from './World/World';
 import Resources from "./Utils/Resources.js";
@@ -23,7 +26,7 @@ export default class Experience{
         this.time = new Time();
         this.gui = new GUI();
         this.stats = new Stats();
-
+        this.theme = new Theme();
 
         this.sizes = new Sizes();
         this.camera = new Camera();
@@ -32,6 +35,7 @@ export default class Experience{
 
 
         this.world = new World();
+
 
         this.SetStats();
 
@@ -47,6 +51,7 @@ export default class Experience{
     resize(){
         this.renderer.resize();
         this.camera.resize();
+        this.world.resize();
     }
 
     update(){

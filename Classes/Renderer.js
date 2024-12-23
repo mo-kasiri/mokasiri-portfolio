@@ -9,7 +9,7 @@ export default class Renderer{
         this.sizes = this.experience.sizes;
         this.scene = this.experience.scene;
         this.canvas =this.experience.canvas;
-        this.gui = this.experience.gui;
+        //this.gui = this.experience.gui;
         this.camera = this.experience.camera;
         this.SetBackgroundColor();
         this.setRenderer();
@@ -45,12 +45,12 @@ export default class Renderer{
     SetBackgroundColor(){
         const rendererParameters = {}
         rendererParameters.clearColor = '#363A7A'
-        this.gui
+       /* this.gui
             .addColor(rendererParameters, 'clearColor')
             .onChange(() =>
             {
                 this.renderer.setClearColor(rendererParameters.clearColor)
-            })
+            })*/
     }
 
     resize(){

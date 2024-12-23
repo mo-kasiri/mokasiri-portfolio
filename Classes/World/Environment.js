@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import Experience from "../Experience.js";
 import { UltraHDRLoader } from 'three/addons/loaders/UltraHDRLoader.js';
+import GSAP from "gsap";
 
 export default class Environment {
     constructor(){
@@ -11,7 +12,14 @@ export default class Environment {
         this.resources = this.experience.resources;
         this.room = this.resources.items.bots;
         this.bots = this.room.scene;
-        //console.log(this.room);
+        this.gui = this.experience.gui;
+        this.obj = {
+            colorObj: {r: 0, g:0, b:0},
+            redLight: {r: 0, g:0},
+            blueLight: {r: 0, g:0},
+            orangeLight: {r: 0, g:0},
+            intensity: 3,
+        };
 
         const size = 20;
         const divisions = 20;
@@ -19,8 +27,8 @@ export default class Environment {
        /* const gridHelper = new THREE.GridHelper(size, divisions);
         this.scene.add(gridHelper);*/
 
-        const axesHelper = new THREE.AxesHelper(5);
-        this.scene.add(axesHelper);
+        //const axesHelper = new THREE.AxesHelper(5);
+        //this.scene.add(axesHelper);
 
         const cubeTextureLoader = new THREE.CubeTextureLoader();
         this.environmentMap = cubeTextureLoader.load([
@@ -34,6 +42,7 @@ export default class Environment {
 
         this.SetSunLight();
         this.SetEnvLights();
+        this.setGui();
         this.SetEnvironmentBackground();
     }
 
@@ -72,12 +81,91 @@ export default class Environment {
 
     }
 
+    switchTheme(theme){
+        if(theme === 'dark'){
+            GSAP.to(this.sunLight.color,{
+                r: 0.05,
+                g: 0.05,
+                b: 0.05,
+            });
+            GSAP.to(this.Ambientlight.color,{
+                r: 0.2,
+                g: 0.2,
+                b: 0.5,
+            });
+            GSAP.to(this.BlueAreaLight.color,{
+                r: 5/255,
+                g: 64/255,
+                b: 200/255,
+            });
+            GSAP.to(this.RedAreaLight.color,{
+                r: 64/255,
+                g: 23/255,
+                b: 115/255,
+            });
+            GSAP.to(this.OrangeAreaLight.color,{
+                r: 29/255,
+                g: 68/255,
+                b: 100/255,
+            })
+        }else{
+            GSAP.to(this.sunLight.color,{
+                r: 1,
+                g: 1,
+                b: 1,
+            });
+            GSAP.to(this.Ambientlight.color,{
+                r: 1,
+                g: 1,
+                b: 1,
+            });
+            GSAP.to(this.BlueAreaLight.color,{
+                r:0.54,
+                g:0.92,
+                b:1
+            });
+            GSAP.to(this.RedAreaLight.color,{
+                r:1.7,
+                g:0.5,
+                b:0.5
+            });
+            GSAP.to(this.OrangeAreaLight.color,{
+                r:1.5,
+                g:0.61,
+                b:0.41
+            })
+        }
+    }
+
+    setGui(){
+        /*this.gui.addColor(this.obj, "colorObj").onChange(()=>{
+            this.sunLight.color.copy(this.obj.colorObj);
+            this.Ambientlight.color.copy(this.obj.colorObj);
+            this.OrangeAreaLight.color.copy(this.obj.orangeLight);
+        });
+
+        this.gui.add(this.obj, 'intensity',0,10).onChange(()=>{
+            this.sunLight.intensity = this.obj.intensity;
+        });
+
+        this.gui.addColor(this.obj,'blueLight').onChange(()=>{
+            this.BlueAreaLight.color.copy(this.obj.blueLight);
+        });
+        this.gui.addColor(this.obj,'redLight').onChange(()=>{
+            this.RedAreaLight.color.copy(this.obj.redLight);
+        });
+        this.gui.addColor(this.obj,'orangeLight').onChange(()=>{
+            this.OrangeAreaLight.color.copy(this.obj.orangeLight);
+        });*/
+
+    }
+
     SetEnvironmentBackground(){
 
         const loader = new UltraHDRLoader();
         loader.setDataType( THREE.FloatType );
         this.environmentMap.encoding = THREE.sRGBEncoding;
-        //this.scene.background = this.environmentMap;
+        this.scene.background = this.environmentMap;
     }
 
 }

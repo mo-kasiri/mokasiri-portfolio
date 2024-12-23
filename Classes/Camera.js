@@ -8,6 +8,7 @@ export default class Camera{
         this.sizes = this.experience.sizes;
         this.scene = this.experience.scene;
         this.canvas =this.experience.canvas;
+        this.aspect = this.sizes.width/this.sizes.height;
 
         this.CreatePerspectiveCamera();
         this.CreateOrthographicCamera();
@@ -15,7 +16,7 @@ export default class Camera{
     }
 
     CreatePerspectiveCamera(){
-        this.perspectiveCamera = new THREE.PerspectiveCamera(35, this.sizes.aspect,0.1, 1000);
+        this.perspectiveCamera = new THREE.PerspectiveCamera(35, this.aspect,0.1, 1000);
         this.perspectiveCamera.position.set(-14,14,35);
         this.scene.add(this.perspectiveCamera);
     }
@@ -23,8 +24,8 @@ export default class Camera{
     CreateOrthographicCamera(){
         this.frustrum = 5;
         this.orthographicCamera = new THREE.OrthographicCamera(
-            (-this.sizes.aspect * this.sizes.frustrum)/2,
-            (this.sizes.aspect * this.sizes.frustrum)/2,
+            (-this.aspect * this.sizes.frustrum)/2,
+            (this.aspect * this.sizes.frustrum)/2,
             this.sizes.frustrum/2,
             -this.sizes.frustrum/2,
             -15,
