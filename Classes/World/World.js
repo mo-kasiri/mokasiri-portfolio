@@ -52,8 +52,8 @@ export default class World extends EventEmitter {
         }
         if(this.room)
             this.room.update();
-        if(this.HolographicRobot){
+        /*if(this.HolographicRobot){
             this.HolographicRobot.update();
-        }
+        }*/
     }
 }

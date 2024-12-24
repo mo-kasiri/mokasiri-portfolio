@@ -12,7 +12,7 @@ export default class Environment {
         this.resources = this.experience.resources;
         this.room = this.resources.items.bots;
         this.bots = this.room.scene;
-        this.gui = this.experience.gui;
+       // this.gui = this.experience.gui;
         this.obj = {
             colorObj: {r: 0, g:0, b:0},
             redLight: {r: 0, g:0},

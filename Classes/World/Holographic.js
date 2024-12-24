@@ -15,6 +15,8 @@ export default class Holographic{
         this.time = this.experience.time;
         this.resources = this.experience.resources;
         this.room = this.resources.items.holographicBot;
+        //this.platform = this.experience.world.room.bots.children[0];
+        //console.log(this.platform);
         this.holographicBot = this.room.scene;
         this.blade = null;
         this.material = null;
@@ -60,7 +62,7 @@ export default class Holographic{
         })
 
 
-        this.holographicBot.position.set(1.5,0,-2.50);
+        //this.holographicBot.position.set(1.5,0,-2.50);
         this.scene.add(this.holographicBot);
         //console.log(this.holographicBot);
         //this.bots.scale.set(0.01,0.01,0.01);
@@ -78,7 +80,9 @@ export default class Holographic{
         }
 
         if(this.holographicBot){
-            this.holographicBot.position.y = 0.6 + Math.sin(this.time.elapsedTime * 2) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
+            //this.holographicBot.position.z = this.platform.position.z;
+            //this.holographicBot.position.x = this.platform.position.x;
+            this.holographicBot.position.y = 0.6 + Math.sin(this.time.elapsedTime) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
         }
         this.material.uniforms.uTime.value = this.time.elapsedTime;
 

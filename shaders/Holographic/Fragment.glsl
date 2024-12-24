@@ -21,7 +21,7 @@ void main()
     fresnel = pow(fresnel,3.0);
 
     // Falloff
-    float falloff = smoothstep(0.8,0.0, fresnel);
+    float falloff = smoothstep(0.5,0.0, fresnel);
 
     // Holographic
     float holographic = fresnel * stripes;
