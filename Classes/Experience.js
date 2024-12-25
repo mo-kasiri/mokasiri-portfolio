@@ -13,6 +13,7 @@ import Theme from './Theme.js';
 import World from './World/World';
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
+import Preloader from "./Preloader.js";
 
 export default class Experience{
     static instance;
@@ -33,8 +34,8 @@ export default class Experience{
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
 
-
         this.world = new World();
+        this.preloader = new Preloader();
 
 
         this.SetStats();

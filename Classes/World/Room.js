@@ -19,8 +19,17 @@ export default class Room{
         this.time = this.experience.time;
         this.deltaTime = this.experience.time.delta;
         this.resources = this.experience.resources;
+        this.preloader = this.experience.preloader;
+        this.preloader.done = this.experience.preloader.done;
+
         this.room = this.resources.items.bots;
+        this.roomChildren = {};
         this.bots = this.room.scene;
+
+        /* Separate Objects */
+        //this.Boxes = null;
+
+
         this.holobot = null;
         this.holobotBlade = null;
         this.lerp = {current:0, target:0, ease:0.1};
@@ -69,7 +78,7 @@ export default class Room{
             '/textures/environmentMaps/2/nz.jpg',
         ]);
 
-
+        console.log(this.bots);
         this.bots.traverse((child) =>
         {
             if(child.name === "HoloBot"){
@@ -82,12 +91,6 @@ export default class Room{
                 this.holobotBlade.material = this.holoMaterial;
             }
 
-
-
-
-
-
-            //console.log(child);
             if(child.name === "Main_Bot"){
                 this.mainBot = child;
             }
@@ -103,7 +106,6 @@ export default class Room{
             }
             if(child.name === "MetallicObjects")
             {
-                //child.visible = false;
                 child.material = new THREE.MeshStandardMaterial({
                         envMap: this.environmentMap,
                         //color: new THREE.Color(0.356,0.356,0.356),
@@ -112,16 +114,48 @@ export default class Room{
                         metalness: params.metalness
                     });
             }
-        })
-        //this.modelSize = Math.sqrt(this.sizes.width)/70;
-        console.log(this.modelSize);
+
+            //if(child.name !=="StartingShape")
+            //child.scale.set(0,0,0);
+            if(child.name === "Boxes"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "FloorItems"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "ProductionLine"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "Platform"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "Computer"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "MetallicObjects"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "HoloBot"){
+                child.scale.set(0,0,0);
+            }
+            if(child.name === "Main_Bot"){
+                child.position.y = 6;
+                child.scale.set(0,0,0);
+            }
+            this.roomChildren[child.name]  = child;
+        });
+
+
         this.bots.scale.set(this.modelSize,this.modelSize, this.modelSize);
+        //this.roomChildren.scale.set(this.modelSize);
+
+
 
         this.HoloLight = new THREE.PointLight(0xFF9C6B,5);
         this.HoloLight.distance = 0;
         if(this.holobot){
            this.HoloLight.position.set(this.holobot.position.x, this.holobot.position.y, this.holobot.position.z);
-            console.log("In position")
+            //console.log("In position")
         }
 
         this.scene.add(this.bots,this.HoloLight);
@@ -149,8 +183,9 @@ export default class Room{
         }
 
         if(this.mainBot){
-            this.mainBot.position.y = Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.1;
+            this.mainBot.position.y += 0.05*(Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.1);
         }
+
         if(this.blades.length){
             this.blades.forEach(blade=>{
                 if(blade.name === "Main_Bot_Blade"){
@@ -159,12 +194,8 @@ export default class Room{
                 blade.rotation.y += 0.1;
             })
         }
-        /* Holo bot update material */
-        /*if(this.holobotBlade){
-            this.holobotBlade.rotation.y += 0.15;
-            this.holobotBlade.rotation.y += 0.01;
-        }*/
 
+        /* Holo bot update material */
         if(this.holobot){
             this.holobot.rotation.y += 0.01;
             this.holobot.position.y = 0.6 + Math.sin(this.time.elapsedTime) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;

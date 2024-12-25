@@ -11,7 +11,7 @@ export default class Environment {
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
         this.room = this.resources.items.bots;
-        this.bots = this.room.scene;
+        //this.bots = this.room.scene;
        // this.gui = this.experience.gui;
         this.obj = {
             colorObj: {r: 0, g:0, b:0},

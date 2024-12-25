@@ -12,6 +12,7 @@ export default class Floor{
         this.deltaTime = this.experience.time.delta;
         this.lerp = {current:0, target:0,ease:0.1};
         this.setFloor();
+        this.setCircles();
     }
 
     setFloor(){
@@ -22,6 +23,27 @@ export default class Floor{
         this.plane.rotation.x = Math.PI / 2;
         this.plane.position.y = -0.5;
         this.scene.add(this.plane);
+    }
+
+    setCircles(){
+        const geometry = new THREE.CircleGeometry(5,32);
+        const material = new THREE.MeshStandardMaterial({color: 0xe5a1aa });
+        const material2 = new THREE.MeshStandardMaterial({color: 0x8395CD });
+        const material3 = new THREE.MeshStandardMaterial({color: 0x7AD0AC });
+        this.circleFirst = new THREE.Mesh(geometry,material);
+        this.circleSecond = new THREE.Mesh(geometry,material2);
+        this.circleThird = new THREE.Mesh(geometry,material3);
+        this.circleFirst.position.y = -0.49;
+        this.circleSecond.position.y = -0.48;
+        this.circleSecond.position.x = 1.5;
+        this.circleThird.position.y = -0.47;
+        this.circleFirst.scale.set(0,0,0);
+        this.circleSecond.scale.set(0,0,0);
+        this.circleThird.scale.set(0,0,0);
+        this.circleFirst.rotation.x = this.circleSecond.rotation.x = this.circleThird.rotation.x = -Math.PI/2;
+        this.circleFirst.receiveShadow = this.circleSecond.receiveShadow = this.circleThird.receiveShadow = true;
+
+        this.scene.add(this.circleFirst, this.circleSecond, this.circleThird);
     }
 
 

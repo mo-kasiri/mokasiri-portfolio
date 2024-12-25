@@ -18,6 +18,9 @@ export default class ControlsTest {
         //this.lerp = {current:0, target:0,ease:0.1};
         //this.room = this.experience.world;
         this.gsap = GSAP;
+        this.circleFirst = this.experience.world.floor.circleFirst;
+        this.circleSecond = this.experience.world.floor.circleSecond;
+        this.circleThird = this.experience.world.floor.circleThird;
         this.gsap.registerPlugin(ScrollTrigger);
 
         this.setScrollTrigger();
@@ -114,7 +117,7 @@ export default class ControlsTest {
             },
             // Mobile ==============================================================================
             "(max-width: 968px)":  ()=>{
-                console.log("Fired Mobile");
+                //console.log("Fired Mobile");
                 this.room.position.set(0,0,0);
 
                 // First Section -----------------------------------------------
@@ -145,7 +148,7 @@ export default class ControlsTest {
                         invalidateOnRefresh: true,
                     }
                 }).to(this.room.position,{
-                    x:1.5
+                    x:1.5,
                 },"same").to(this.room.scale,{
                     x:0.8,
                     y:0.8,
@@ -232,18 +235,51 @@ export default class ControlsTest {
                 })
 
 
-                // Mini Platform animation
-                /*this.thirdMoveTimeline = new GSAP.timeline({
+                // Circle Animation ===================================
+                // First Section -----------------------------------------------
+                this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger:{
-                        trigger: ".third-move",
-                        start: "center center",
+                        trigger: ".first-move",
+                        start: "top bottom",
                         end: "bottom bottom",
-                        scrub: 0.6,
+                        scrub: 3,
+                        //invalidateOnRefresh: true,
+                    }
+                }).to(this.circleFirst.scale,{
+                    x:3,
+                    y:3,
+                    z:3
+                })
+
+                // Second Section -----------------------------------------------
+                this.secondMoveTimeline = new GSAP.timeline({
+                    scrollTrigger:{
+                        trigger: ".second-move",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     }
-                }).to(this.room.position,{
-                    x:-1.5
-                },"same")*/
+                }).to(this.circleSecond.scale,{
+                    x:3,
+                    y:3,
+                    z:3
+                })
+
+                // Third Section ----------------------------------------------------------
+                this.thirdMoveTimeline = new GSAP.timeline({
+                    scrollTrigger:{
+                        trigger: ".third-move",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 2,
+                        invalidateOnRefresh: true,
+                    }
+                }).to(this.circleThird.scale,{
+                    x:3,
+                    y:3,
+                    z:3
+                })
             },
         });
     }

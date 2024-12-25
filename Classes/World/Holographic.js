@@ -20,7 +20,7 @@ export default class Holographic{
         this.holographicBot = this.room.scene;
         this.blade = null;
         this.material = null;
-        this.gui = this.experience.gui;
+        //this.gui = this.experience.gui;
 
         this.SetModel();
 

@@ -18,6 +18,10 @@ svg{
   transition: background-color 0.5s, color 0.5s;
 }
 
+body{
+  overflow: hidden;
+}
+
 :root{
 /*  --primary-color: #FAF4E5;
   --primary-pink: #e5a1aa;*/

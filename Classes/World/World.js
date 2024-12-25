@@ -18,14 +18,15 @@ export default class World extends EventEmitter {
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
         this.theme = this.experience.theme;
+        this.preloader = this.experience.preloader;
 
 
         this.resources.on("ready",()=>{
+            this.floor = new Floor();
             this.room = new Room();
-            //this.HolographicRobot = new Holographic();
             this.environment = new Environment();
             this.environmentMap = this.environment.environmentMap;
-            this.floor = new Floor();
+
             this.Controls = new Controls();
             this.emit("worldReady");
         });
@@ -33,7 +34,6 @@ export default class World extends EventEmitter {
         this.theme.on('switch',(theme)=>{
             this.switchTheme(theme);
         })
-
     }
 
     switchTheme(theme){
@@ -52,6 +52,9 @@ export default class World extends EventEmitter {
         }
         if(this.room)
             this.room.update();
+        if(this.preloader){
+            this.preloader.update();
+        }
         /*if(this.HolographicRobot){
             this.HolographicRobot.update();
         }*/
