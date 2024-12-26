@@ -27,7 +27,7 @@ export default class World extends EventEmitter {
             this.environment = new Environment();
             this.environmentMap = this.environment.environmentMap;
 
-            this.Controls = new Controls();
+            this.Controls = this.experience.controls;
             this.emit("worldReady");
         });
 

@@ -8,6 +8,7 @@
 html,body{
   font-family: "Montserrat", "sans-serif";
   color: var(--text-black);
+  overflow-x: hidden;
 }
 
 h1,
@@ -18,9 +19,9 @@ svg{
   transition: background-color 0.5s, color 0.5s;
 }
 
-body{
+/*body{
   overflow: hidden;
-}
+}*/
 
 :root{
 /*  --primary-color: #FAF4E5;
@@ -58,6 +59,10 @@ body{
   --color-blue: var(--color-text-dark);
 }
 
+.hidden{
+  display: none;
+}
+
 /* Experience -------------------------------*/
 
 
@@ -72,8 +77,30 @@ body{
   height: 100%;
 }
 
+.arrow-svg-wrapper{
+  position: absolute;
+  top: 92%;
+  left:50%;
+  opacity: 0;
+  /*font-size: 25px;*/
+  color: var(--color-text);
+  transform: translate(-50%, -50%);
+  animation: bounce 0.5s ease-in alternate infinite;
+}
+
+@keyframes bounce{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(8px);
+  }
+}
+
+
 /* Toggle Bar ---------------------------------*/
 .toggle-bar{
+  opacity: 0;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -82,6 +109,7 @@ body{
   top: 48px;
   right: 48px;
   z-index: 99999999999;
+
   color: var(--color-text);
 }
 
@@ -125,18 +153,89 @@ body{
   left: 28px;
 }
 
+/* preloader */
+.preloader{
+  background-color: var(--color-background-light);
+  opacity: 1;
+  width: 100%;
+  z-index: 999999999999;
+}
 
-/* Page itself --------------------------------*/
+.preloader-wrapper{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle{
+  width: 10px;
+  height: 10px;
+  margin: 6px;
+  border-radius: 50%;
+  background-color: var(--color-pink-light);
+  animation: load 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2){
+  animation-delay: 0.1s;
+}
+
+.circle:nth-child(3){
+  animation-delay: 0.2s;
+}
+
+@keyframes load {
+  0%{
+    transform: translateY(0);
+  }
+ 20%{
+    transform: translateY(-12px);
+ }
+ 40%{
+    transform: translateY(0);
+  }
+}
+
+/* Page itself -------------------------------------------------------------------------------------------------------*/
 .page{
   z-index: 9999;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .page-wrapper{
   position: relative;
 }
+
+
+/* Preloader stuff */
+.animatedis{
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.intro-text{
+  display: flex;
+  justify-content: center;
+ align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 500;
+  font-size: 16px;
+  transform: translate(-50%, -50%);
+}
+
 
 /* Section Formatting ---------------------------- */
 .first-section{
@@ -264,7 +363,7 @@ body{
   position: absolute;
   bottom: 80px;
   left: 0;
-  color: var(--color-pink);
+  color: var(--color-text);
 
 }
 
@@ -272,20 +371,20 @@ body{
   position: absolute;
   top: calc(50% - 100px);
   right: 0;
-  background-color: rgba(255,255,255,0.35);
-  padding: 16px;
-  border: white solid 2px;
-  border-radius: 10px;
-  border-color: rgba(255,255,255,0.6);
+ /* background-color: rgba(255,255,255,0.35);*/
+  /*padding: 16px;*/
+  /*border: white solid 2px;*/
+  /*border-radius: 10px;*/
+  /*border-color: rgba(255,255,255,0.6);*/
   color: var(--color-text);
 }
 .hero-main-title{
   font-size: 64px;
-  color: var(--color-pink);
+  color: var(--color-text);
 }
 .hero-main-description{
   font-size: 18px;
-  color: var(--color-pink);
+  color: var(--color-text);
 }
 
 .hero-second-subheading{
@@ -323,7 +422,11 @@ body{
   .section{
     width: 100%;
   }
-  .hero-second{
+  .progress-bar-wrapper-left{
+    right:0;
+    left:auto;
+  }
+  /*.hero-second{
     top: 100px;
     right: 50%;
     transform: translate(50%, 10px);
@@ -335,10 +438,24 @@ body{
     text-justify: inter-word;
     font-size: 18px;
     text-align: -webkit-center;
+  }*/
+  .hero-main{
+    bottom: 120px;
   }
-  .progress-bar-wrapper-left{
-    right:0;
-    left:auto;
+  .hero-wrapper{
+    width: calc(100% - 10px);
+  }
+  .hero-main-title{
+    font-size: 32px;
+  }
+  .hero-main-description{
+    font-size: 10px;
+  }
+  .hero-second-subheading{
+    font-size: 18px;
+  }
+  .hero-second{
+    top: calc(50% - 200px);
   }
 }
 

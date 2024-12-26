@@ -183,7 +183,9 @@ export default class Room{
         }
 
         if(this.mainBot){
-            this.mainBot.position.y += 0.05*(Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.1);
+            this.mainBot.position.y += 0.04*(Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.1);
+            this.mainBot.position.x += 0.01*(Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.2);
+            this.mainBot.position.z += 0.01*(Math.sin(this.time.elapsedTime * 2) * 0.2 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.3);
         }
 
         if(this.blades.length){

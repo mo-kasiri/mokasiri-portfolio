@@ -1,8 +1,8 @@
 /* Singleton Design Pattern */
 
 import * as THREE from 'three';
-import GUI from 'lil-gui'
-import Stats from 'stats.js'
+/*import GUI from 'lil-gui'*/
+//import Stats from 'stats.js'
 import {EventEmitter} from 'events';
 import Sizes from './Utils/Sizes';
 import Time from './Utils/Time';
@@ -11,6 +11,7 @@ import Renderer from "./Renderer";
 import Theme from './Theme.js';
 
 import World from './World/World';
+import Controls from "./World/Controls.js"
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
 import Preloader from "./Preloader.js";
@@ -25,17 +26,24 @@ export default class Experience{
         this.canvas = canvas;
         this.scene = new THREE.Scene();
         this.time = new Time();
-        this.gui = new GUI();
-        this.stats = new Stats();
+        /*this.gui = new GUI();*/
+        //this.stats = new Stats();
         this.theme = new Theme();
 
         this.sizes = new Sizes();
         this.camera = new Camera();
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
+        //this.controls = null;
 
         this.world = new World();
         this.preloader = new Preloader();
+
+        this.preloader.on("enableControls",()=>{
+
+            this.controls = new Controls();
+            console.log("controls initiated");
+        })
 
 
         this.SetStats();
@@ -56,15 +64,16 @@ export default class Experience{
     }
 
     update(){
-        this.stats.begin();
+        //this.stats.begin();
         this.world.update();
         this.camera.update();
         this.renderer.update();
-        this.stats.end();
+        //this.stats.end();
+        this.preloader.update();
     }
 
     SetStats(){
-        this.stats.showPanel(0);
-        document.body.appendChild(this.stats.dom);
+        //this.stats.showPanel(0);
+        //document.body.appendChild(this.stats.dom);
     }
 }

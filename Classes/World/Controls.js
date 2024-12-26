@@ -15,35 +15,22 @@ export default class ControlsTest {
         this.time = this.experience.time;
         this.deltaTime = this.experience.time.delta;
         this.resources = this.experience.resources;
-        //this.lerp = {current:0, target:0,ease:0.1};
-        //this.room = this.experience.world;
         this.gsap = GSAP;
         this.circleFirst = this.experience.world.floor.circleFirst;
         this.circleSecond = this.experience.world.floor.circleSecond;
         this.circleThird = this.experience.world.floor.circleThird;
         this.gsap.registerPlugin(ScrollTrigger);
 
+        document.querySelector(".page").style.overflow = "visible";
+        //document.querySelector(".page").style.overflowX = "hidden";
+
+
+
+        //this.setSmoothScroll();
         this.setScrollTrigger();
     }
 
-    /*setScrollTrigger(){
-        this.world = this.experience.world;
 
-        this.room = this.experience.world.room.bots;
-
-        this.timeline = this.gsap.timeline();
-        this.timeline.to(this.room.position,{
-            x: ()=> {return this.sizes.width > this.sizes.height ? 5 / this.aspect : 1 / this.aspect},
-            scrollTrigger:{
-                trigger: ".first-move",
-                markers: true,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-                invalidateOnRefresh: true,
-            }
-        });*/
-        //console.log(this.room);
 
     setScrollTrigger(){
 
