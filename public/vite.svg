@@ -1,1 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.25 122.73">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #eaeaea;
+        stroke-width: .75px;
+      }
+
+      .cls-3, .cls-2 {
+        stroke: #231f20;
+      }
+
+      .cls-3, .cls-2, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        fill: #353535;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" x="44.41" y="10.98" width="24.86" height="3.96" rx="1.29" ry="1.29" transform="translate(43.88 69.8) rotate(-90)"/>
+  <rect class="cls-3" x=".38" y="21.85" width="112.5" height="100.5" rx="30.74" ry="30.74"/>
+  <rect class="cls-2" x="11.04" y="32.52" width="91.16" height="79.16" rx="22.43" ry="22.43"/>
+  <rect class="cls-4" x="69.88" y="48.33" width="11.87" height="39.3" rx="5.93" ry="5.93"/>
+  <rect class="cls-4" x="33.22" y="48.33" width="11.87" height="39.3" rx="5.93" ry="5.93"/>
+  <rect class="cls-5" x="37.44" y="17.18" width="38.38" height="4.22" rx="2.11" ry="2.11"/>
+  <rect class="cls-5" x="44.19" y="12.96" width="24.86" height="4.22" rx="2.11" ry="2.11"/>
+  <path class="cls-5" d="M50.16,4.22L5.4,3.03c-1.17,0-2.18,.24-2.18-.92h0c0-1.17,1.03-.92,2.19-.92L50.16,0c1.17,0,2.11,.94,2.11,2.11h0c0,1.17-.94,2.11-2.11,2.11Z"/>
+  <ellipse class="cls-1" cx="20.41" cy="30.34" rx="6.26" ry="2.11" transform="translate(-10.48 10.77) rotate(-23.71)"/>
+  <ellipse class="cls-1" cx="37.44" cy="54.56" rx="1.86" ry="2.11" transform="translate(-18.78 19.66) rotate(-23.71)"/>
+  <ellipse class="cls-1" cx="73.92" cy="54.56" rx="1.86" ry="2.11" transform="translate(-15.7 34.33) rotate(-23.71)"/>
+  <path class="cls-5" d="M63.54,4.22l44.77-1.19c1.17,0,2.18,.24,2.18-.92h0c0-1.17-1.03-.92-2.19-.92L63.54,0c-1.17,0-2.11,.94-2.11,2.11h0c0,1.17,.94,2.11,2.11,2.11Z"/>
+</svg>
