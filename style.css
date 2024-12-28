@@ -23,6 +23,33 @@ svg{
   overflow: hidden;
 }*/
 
+a {
+  outline-color: transparent;
+}
+
+a:link {
+  color: #6900ff;
+}
+
+a:visited {
+  color: #a5c300;
+}
+
+a:focus {
+  text-decoration: none;
+  background: #bae498;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #cdfeaa;
+}
+
+a:active {
+  background: #6900ff;
+  color: #cdfeaa;
+}
+
 :root{
 /*  --primary-color: #FAF4E5;
   --primary-pink: #e5a1aa;*/
@@ -250,7 +277,7 @@ svg{
 .section{
   position: relative;
   width: 50%;
-  padding: 600px 4%;
+  padding: 300px 4%;
   margin: 0;
   background-color: var(--color-background);
   overflow: hidden;
@@ -297,7 +324,7 @@ svg{
 .section-intro-wrapper{
   position: relative;
   border-bottom: 2px solid var(--color-background);
-  padding: 20% 5% 400px;
+  padding: 20% 5% 100px;
 }
 
 .section-intro-wrapper{
@@ -313,7 +340,13 @@ svg{
   color: var(--color-text);
 }
 
+.section-heading-sub{
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
 .section-text{
+  text-align: justify;
   line-height: 2;
   margin-top: 18px;
   font-size: 16px;
@@ -335,14 +368,19 @@ svg{
 }
 
 .section-title-text{
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 500;
   transform-origin: left;
-  transform: skewY(25deg);
+  /*transform: skewY(10deg);*/
   z-index: 5;
   text-transform: uppercase;
   display: block;
   color: var(--color-pink);
+}
+
+.section-number{
+  font-size: 25px;
+  font-weight: 500;
 }
 
 /* Hero section --------------------------------*/
