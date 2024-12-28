@@ -78,7 +78,7 @@ export default class Room{
             '/textures/environmentMaps/2/nz.jpg',
         ]);
 
-        console.log(this.bots);
+        //console.log(this.bots);
         this.bots.traverse((child) =>
         {
             if(child.name === "HoloBot"){
@@ -86,7 +86,7 @@ export default class Room{
                 this.holobot.material = this.holoMaterial;
             }
             if(child.name === "HoloBlade"){
-                console.log("found HoloBlade")
+                //console.log("found HoloBlade")
                 this.holobotBlade = child;
                 this.holobotBlade.material = this.holoMaterial;
             }

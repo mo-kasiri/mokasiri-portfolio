@@ -65,6 +65,10 @@ svg{
   display: none;
 }
 
+.show{
+  display: block !important;
+}
+
 /* Experience -------------------------------*/
 
 
@@ -292,9 +296,9 @@ a:active {
 }
 
 .intro-text{
-  display: flex;
+  display: none;
   justify-content: center;
- align-items: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;

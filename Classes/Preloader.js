@@ -33,7 +33,7 @@ export default class Preloader extends EventEmitter{
         convert(document.querySelector(".second-sub"));
         this.room = this.experience.world.room.bots;
         this.roomChildren = this.experience.world.room.roomChildren;
-        console.log(this.roomChildren);
+        //console.log(this.roomChildren);
         this.startingShape = this.roomChildren.StartingShape;
         this.startingShape.scale.set(1,1,1);
     }
@@ -45,7 +45,11 @@ export default class Preloader extends EventEmitter{
             this.timeline.to(".preloader",{
                 opacity: 0,
                 onComplete: ()=>{
+
                     document.querySelector(".preloader").classList.add(".hidden");
+                    document.querySelector(".intro-text").style.display="block";
+                    document.querySelector(".hero-second").style.display="block";
+                    document.querySelector(".hero-main").style.display="block";
                 }
             })
 
