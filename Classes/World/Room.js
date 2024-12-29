@@ -70,12 +70,12 @@ export default class Room{
 
         const cubeTextureLoader = new THREE.CubeTextureLoader();
         this.environmentMap = cubeTextureLoader.load([
-            '/textures/environmentMaps/2/px.jpg',
-            '/textures/environmentMaps/2/nx.jpg',
-            '/textures/environmentMaps/2/py.jpg',
-            '/textures/environmentMaps/2/ny.jpg',
-            '/textures/environmentMaps/2/pz.jpg',
-            '/textures/environmentMaps/2/nz.jpg',
+            '/textures/environmentMaps/0/px.jpg',
+            '/textures/environmentMaps/0/nx.jpg',
+            '/textures/environmentMaps/0/py.jpg',
+            '/textures/environmentMaps/0/ny.jpg',
+            '/textures/environmentMaps/0/pz.jpg',
+            '/textures/environmentMaps/0/nz.jpg',
         ]);
 
         //console.log(this.bots);
@@ -151,14 +151,14 @@ export default class Room{
 
 
 
-        this.HoloLight = new THREE.PointLight(0xFF9C6B,5);
+        /*this.HoloLight = new THREE.PointLight(0xFF9C6B,5);
         this.HoloLight.distance = 0;
         if(this.holobot){
            this.HoloLight.position.set(this.holobot.position.x, this.holobot.position.y, this.holobot.position.z);
             //console.log("In position")
-        }
+        }*/
 
-        this.scene.add(this.bots,this.HoloLight);
+        this.scene.add(this.bots/*,this.HoloLight*/);
     }
 
     onMouseMove(){

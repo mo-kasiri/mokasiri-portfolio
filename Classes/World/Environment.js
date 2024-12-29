@@ -32,12 +32,12 @@ export default class Environment {
 
         const cubeTextureLoader = new THREE.CubeTextureLoader();
         this.environmentMap = cubeTextureLoader.load([
-            '/textures/environmentMaps/2/px.jpg',
-            '/textures/environmentMaps/2/nx.jpg',
-            '/textures/environmentMaps/2/py.jpg',
-            '/textures/environmentMaps/2/ny.jpg',
-            '/textures/environmentMaps/2/pz.jpg',
-            '/textures/environmentMaps/2/nz.jpg',
+            '/textures/environmentMaps/0/px.jpg',
+            '/textures/environmentMaps/0/nx.jpg',
+            '/textures/environmentMaps/0/py.jpg',
+            '/textures/environmentMaps/0/ny.jpg',
+            '/textures/environmentMaps/0/pz.jpg',
+            '/textures/environmentMaps/0/nz.jpg',
         ]);
 
         this.SetSunLight();
