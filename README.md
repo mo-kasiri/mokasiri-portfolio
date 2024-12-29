@@ -2,9 +2,9 @@
 
 ### This page showcases my portfolio
 
-Check the web application: https://github.com/mo-kasiri/mokasiri-portfolio/
+Check the web application: https://mokasiri-portfolio-d6w6.vercel.app/
 
-Checkout the source code: https://github.com/mo-kasiri/
+Checkout the source code: https://github.com/mo-kasiri/mokasiri-portfolio
 
 ---
 ### Welcome to my portfolio!
