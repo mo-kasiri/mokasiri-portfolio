@@ -207,9 +207,9 @@ export default class Preloader extends EventEmitter{
                     ease: "circ",
                     duration: 0.4,
                 }).to(this.roomChildren.HoloBot.scale,{
-                    x:1.2,
-                    y:1.2,
-                    z:1.2,
+                    x:0.9,
+                    y:0.9,
+                    z:0.9,
                     ease: "circ",
                     duration: 0.2,
                 }).to(this.roomChildren.Computer.scale,{

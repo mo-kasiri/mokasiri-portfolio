@@ -31,6 +31,7 @@ export default class Room{
 
 
         this.holobot = null;
+        this.text = null;
         this.holobotBlade = null;
         this.lerp = {current:0, target:0, ease:0.1};
         this.blades = []
@@ -48,12 +49,25 @@ export default class Room{
             blending: THREE.AdditiveBlending,
             depthWrite: false,
             transparent: true,
-            side: THREE.DoubleSide,
+            //side: THREE.DoubleSide,
             vertexShader: holographicVertexShader,
             fragmentShader: holographicFragmentShader,
             uniforms:{
                 uTime: new THREE.Uniform(0),
                 uColor: new THREE.Uniform(new THREE.Color(materialParameters.color)),
+            }
+        });
+
+        this.textMaterial = new THREE.ShaderMaterial({
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            transparent: true,
+            //side: THREE.DoubleSide,
+            vertexShader: holographicVertexShader,
+            fragmentShader: holographicFragmentShader,
+            uniforms:{
+                uTime: new THREE.Uniform(0),
+                uColor: new THREE.Uniform(new THREE.Color(1000,0,0,255)),
             }
         });
 
@@ -142,6 +156,10 @@ export default class Room{
                 child.position.y = 6;
                 child.scale.set(0,0,0);
             }
+            if(child.name === "Text"){
+                this.text = child;
+                //this.text.material = this.textMaterial;
+            }
             this.roomChildren[child.name]  = child;
         });
 
@@ -200,7 +218,10 @@ export default class Room{
         /* Holo bot update material */
         if(this.holobot){
             this.holobot.rotation.y += 0.01;
-            this.holobot.position.y = 0.6 + Math.sin(this.time.elapsedTime) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
+            this.holobot.position.y = 1 + Math.sin(this.time.elapsedTime) * 0.1 + Math.sin(this.time.elapsedTime * 2 + 3.45) * 0.05;
+        }
+        if(this.text){
+            this.text.rotation.z += 0.01;
         }
         this.holoMaterial.uniforms.uTime.value = this.time.elapsedTime;
     }
