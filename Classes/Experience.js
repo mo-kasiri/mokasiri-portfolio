@@ -1,79 +1,77 @@
 /* Singleton Design Pattern */
 
-import * as THREE from 'three';
-/*import GUI from 'lil-gui'*/
+import * as THREE from "three";
+import GUI from "lil-gui";
 //import Stats from 'stats.js'
-import {EventEmitter} from 'events';
-import Sizes from './Utils/Sizes';
-import Time from './Utils/Time';
-import Camera from './Camera';
+import { EventEmitter } from "events";
+import Sizes from "./Utils/Sizes";
+import Time from "./Utils/Time";
+import Camera from "./Camera";
 import Renderer from "./Renderer";
-import Theme from './Theme.js';
+import Theme from "./Theme.js";
 
-import World from './World/World';
-import Controls from "./World/Controls.js"
+import World from "./World/World";
+import Controls from "./World/Controls.js";
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
 import Preloader from "./Preloader.js";
 
-export default class Experience{
-    static instance;
-    constructor(canvas){
-        if(Experience.instance){
-            return Experience.instance;
-        }
-        Experience.instance = this;
-        this.canvas = canvas;
-        this.scene = new THREE.Scene();
-        this.time = new Time();
-        /*this.gui = new GUI();*/
-        //this.stats = new Stats();
-        this.theme = new Theme();
-
-        this.sizes = new Sizes();
-        this.camera = new Camera();
-        this.renderer = new Renderer();
-        this.resources = new Resources(assets);
-        //this.controls = null;
-
-        this.world = new World();
-        this.preloader = new Preloader();
-
-        this.preloader.on("enableControls",()=>{
-
-            this.controls = new Controls();
-            console.log("controls initiated");
-        })
-
-
-        this.SetStats();
-
-        this.time.on("update",()=>{
-            this.update();
-        });
-
-        this.sizes.on("resize",()=>{
-            this.resize();
-        });
+export default class Experience {
+  static instance;
+  constructor(canvas) {
+    if (Experience.instance) {
+      return Experience.instance;
     }
+    Experience.instance = this;
+    this.canvas = canvas;
+    this.scene = new THREE.Scene();
+    this.time = new Time();
+    this.gui = new GUI();
+    //this.stats = new Stats();
+    this.theme = new Theme();
 
-    resize(){
-        this.renderer.resize();
-        this.camera.resize();
-        this.world.resize();
-    }
+    this.sizes = new Sizes();
+    this.camera = new Camera();
+    this.renderer = new Renderer();
+    this.resources = new Resources(assets);
+    //this.controls = null;
 
-    update(){
-        //this.stats.begin();
-        this.world.update();
-        this.camera.update();
-        this.renderer.update();
-        //this.stats.end();
-        this.preloader.update();
-    }
+    this.world = new World();
+    this.preloader = new Preloader();
 
-    SetStats(){
-        //this.stats.showPanel(0);
-        //document.body.appendChild(this.stats.dom);
-    }
+    this.preloader.on("enableControls", () => {
+      this.controls = new Controls();
+      console.log("controls initiated");
+    });
+
+    this.SetStats();
+
+    this.time.on("update", () => {
+      this.update();
+    });
+
+    this.sizes.on("resize", () => {
+      this.resize();
+    });
+  }
+
+  resize() {
+    this.renderer.resize();
+    this.camera.resize();
+    this.world.resize();
+  }
+
+  update() {
+    //this.stats.begin();
+    this.world.update();
+    this.camera.update();
+    this.renderer.update();
+    //this.stats.end();
+    this.preloader.update();
+  }
+
+  SetStats() {
+    //this.stats.showPanel(0);
+    //document.body.appendChild(this.stats.dom);
+  }
 }
