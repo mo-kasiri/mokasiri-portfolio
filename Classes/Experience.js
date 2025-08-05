@@ -1,7 +1,7 @@
 /* Singleton Design Pattern */
 
 import * as THREE from "three";
-import GUI from "lil-gui";
+//import GUI from "lil-gui";
 //import Stats from 'stats.js'
 import { EventEmitter } from "events";
 import Sizes from "./Utils/Sizes";
@@ -23,10 +23,11 @@ export default class Experience {
       return Experience.instance;
     }
     Experience.instance = this;
+    document.body.style.paddingRight = "0px";
     this.canvas = canvas;
     this.scene = new THREE.Scene();
     this.time = new Time();
-    this.gui = new GUI();
+    //this.gui = new GUI();
     //this.stats = new Stats();
     this.theme = new Theme();
 

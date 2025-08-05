@@ -4,34 +4,18 @@ import { UltraHDRLoader } from 'three/addons/loaders/UltraHDRLoader.js';
 import GSAP from "gsap";
 
 export default class Environment {
-    constructor(){
-        this.experience = new Experience();
-        this.scene = this.experience.scene;
-        this.renderer = this.experience.renderer;
-        this.camera = this.experience.camera;
-        this.resources = this.experience.resources;
-        this.room = this.resources.items.bots;
-        //this.bots = this.room.scene;
-       // this.gui = this.experience.gui;
+    constructor() {
+        const experience = new Experience();
+        this.scene = experience.scene;
+        this.renderer = experience.renderer;
+        this.camera = experience.camera;
+        this.resources = experience.resources;
+
         this.obj = {
-            colorObj: {r: 0, g:0, b:0},
-            redLight: {r: 0, g:0},
-            blueLight: {r: 0, g:0},
-            orangeLight: {r: 0, g:0},
             intensity: 3,
         };
 
-        const size = 20;
-        const divisions = 20;
-
-       /* const gridHelper = new THREE.GridHelper(size, divisions);
-        this.scene.add(gridHelper);*/
-
-        //const axesHelper = new THREE.AxesHelper(5);
-        //this.scene.add(axesHelper);
-
-        const cubeTextureLoader = new THREE.CubeTextureLoader();
-        this.environmentMap = cubeTextureLoader.load([
+        this.environmentMap = new THREE.CubeTextureLoader().load([
             '/textures/environmentMaps/0/px.jpg',
             '/textures/environmentMaps/0/nx.jpg',
             '/textures/environmentMaps/0/py.jpg',
@@ -39,133 +23,62 @@ export default class Environment {
             '/textures/environmentMaps/0/pz.jpg',
             '/textures/environmentMaps/0/nz.jpg',
         ]);
+        this.environmentMap.encoding = THREE.sRGBEncoding;
 
-        this.SetSunLight();
-        this.SetEnvLights();
-        this.setGui();
-        this.SetEnvironmentBackground();
+        this.setSunLight();
+        this.setEnvLights();
+        this.setEnvironmentBackground();
     }
 
+    setSunLight() {
+        const sun = new THREE.DirectionalLight(0xffffff, this.obj.intensity);
+        sun.castShadow = true;
+        sun.shadow.camera.far = 20;
+        sun.shadow.mapSize.set(1024, 1024); // reduced for better performance
+        sun.shadow.normalBias = 0.05;
+        sun.position.set(1.5, 7, 3);
+        this.scene.add(sun);
+        this.sunLight = sun;
 
-
-    SetSunLight(){
-       this.sunLight = new THREE.DirectionalLight("#ffffff",3);
-       this.sunLight.castShadow = true;
-       this.sunLight.shadow.camera.far = 20;
-       this.sunLight.shadow.mapSize.set(2048,2048);
-       this.sunLight.shadow.normalBias = 0.05;
-       this.sunLight.position.set(1.5,7,3);
-       this.scene.add(this.sunLight);
-
-       this.Ambientlight = new THREE.AmbientLight(0xffffff, 1);
-       this.scene.add(this.Ambientlight);
-
-
+        const ambient = new THREE.AmbientLight(0xffffff, 1);
+        this.scene.add(ambient);
+        this.ambientLight = ambient;
     }
 
-    SetEnvLights(){
-        this.BlueAreaLight = new THREE.PointLight(0x8AEBFF, 20);
-        this.BlueAreaLight.distance = 0;
-        this.BlueAreaLight.position.set(3,3,1);
+    setEnvLights() {
+        const makeLight = (color, intensity, pos) => {
+            const light = new THREE.PointLight(color, intensity);
+            light.position.set(...pos);
+            this.scene.add(light);
+            return light;
+        };
 
-        this.RedAreaLight = new THREE.PointLight(0xFF7D7F, 25);
-        this.RedAreaLight.position.set(-2,3,-1);
-
-        this.OrangeAreaLight = new THREE.PointLight(0xFF9C6B,15);
-        this.OrangeAreaLight.distance = 0;
-        this.OrangeAreaLight.position.set(0,2.5,-3);
-
-
-        this.scene.add(this.BlueAreaLight, this.RedAreaLight, this.OrangeAreaLight);
-
-
+        this.blueLight = makeLight(0x8AEBFF, 20, [3, 3, 1]);
+        this.redLight = makeLight(0xFF7D7F, 25, [-2, 3, -1]);
+        this.orangeLight = makeLight(0xFF9C6B, 15, [0, 2.5, -3]);
     }
 
-    switchTheme(theme){
-        if(theme === 'dark'){
-            GSAP.to(this.sunLight.color,{
-                r: 0.05,
-                g: 0.05,
-                b: 0.05,
-            });
-            GSAP.to(this.Ambientlight.color,{
-                r: 0.2,
-                g: 0.2,
-                b: 0.5,
-            });
-            GSAP.to(this.BlueAreaLight.color,{
-                r: 5/255,
-                g: 64/255,
-                b: 200/255,
-            });
-            GSAP.to(this.RedAreaLight.color,{
-                r: 64/255,
-                g: 23/255,
-                b: 115/255,
-            });
-            GSAP.to(this.OrangeAreaLight.color,{
-                r: 29/255,
-                g: 68/255,
-                b: 100/255,
-            })
-        }else{
-            GSAP.to(this.sunLight.color,{
-                r: 1,
-                g: 1,
-                b: 1,
-            });
-            GSAP.to(this.Ambientlight.color,{
-                r: 1,
-                g: 1,
-                b: 1,
-            });
-            GSAP.to(this.BlueAreaLight.color,{
-                r:0.54,
-                g:0.92,
-                b:1
-            });
-            GSAP.to(this.RedAreaLight.color,{
-                r:1.7,
-                g:0.5,
-                b:0.5
-            });
-            GSAP.to(this.OrangeAreaLight.color,{
-                r:1.5,
-                g:0.61,
-                b:0.41
-            })
+    switchTheme(theme) {
+        const to = (light, r, g, b) => GSAP.to(light.color, { r, g, b });
+
+        if (theme === 'dark') {
+            to(this.sunLight, 0.05, 0.05, 0.05);
+            to(this.ambientLight, 0.2, 0.2, 0.5);
+            to(this.blueLight, 5 / 255, 64 / 255, 200 / 255);
+            to(this.redLight, 64 / 255, 23 / 255, 115 / 255);
+            to(this.orangeLight, 29 / 255, 68 / 255, 100 / 255);
+        } else {
+            to(this.sunLight, 1, 1, 1);
+            to(this.ambientLight, 1, 1, 1);
+            to(this.blueLight, 0.54, 0.92, 1);
+            to(this.redLight, 1, 0.5, 0.5);
+            to(this.orangeLight, 1, 0.61, 0.41);
         }
     }
 
-    setGui(){
-        /*this.gui.addColor(this.obj, "colorObj").onChange(()=>{
-            this.sunLight.color.copy(this.obj.colorObj);
-            this.Ambientlight.color.copy(this.obj.colorObj);
-            this.OrangeAreaLight.color.copy(this.obj.orangeLight);
-        });
-
-        this.gui.add(this.obj, 'intensity',0,10).onChange(()=>{
-            this.sunLight.intensity = this.obj.intensity;
-        });
-
-        this.gui.addColor(this.obj,'blueLight').onChange(()=>{
-            this.BlueAreaLight.color.copy(this.obj.blueLight);
-        });
-        this.gui.addColor(this.obj,'redLight').onChange(()=>{
-            this.RedAreaLight.color.copy(this.obj.redLight);
-        });
-        this.gui.addColor(this.obj,'orangeLight').onChange(()=>{
-            this.OrangeAreaLight.color.copy(this.obj.orangeLight);
-        });*/
-
-    }
-
-    SetEnvironmentBackground(){
-
-        const loader = new UltraHDRLoader();
-        loader.setDataType( THREE.FloatType );
-        this.environmentMap.encoding = THREE.sRGBEncoding;
+    setEnvironmentBackground() {
+        // UltraHDRLoader is redundant here if you're not using .hdr format
+        // Removed HDR loader usage if not needed
         this.scene.background = this.environmentMap;
     }
-
 }

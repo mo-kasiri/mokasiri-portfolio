@@ -27,6 +27,7 @@ export default class Preloader extends EventEmitter {
 
   setAssets() {
     convert(document.querySelector(".intro-text"));
+    //convert(document.querySelector(".intro-text-mobile"));
     convert(document.querySelector(".hero-main-title"));
     convert(document.querySelector(".hero-main-description"));
     convert(document.querySelector(".hero-second-subheading"));
@@ -36,6 +37,9 @@ export default class Preloader extends EventEmitter {
     //console.log(this.roomChildren);
     this.startingShape = this.roomChildren.StartingShape;
     this.startingShape.scale.set(1, 1, 1);
+    if (this.device === "mobile") {
+      this.startingShape.scale.set(3, 3, 3);
+    }
   }
 
   firstIntro() {
@@ -47,6 +51,7 @@ export default class Preloader extends EventEmitter {
         onComplete: () => {
           document.querySelector(".preloader").classList.add(".hidden");
           document.querySelector(".intro-text").style.display = "block";
+          //document.querySelector(".intro-text-mobile").style.display = "block";
           document.querySelector(".hero-second").style.display = "block";
           document.querySelector(".hero-main").style.display = "block";
         },
@@ -84,9 +89,9 @@ export default class Preloader extends EventEmitter {
           .to(
             this.startingShape.scale,
             {
-              x: 1.4,
-              y: 1.4,
-              z: 1.4,
+              x: 4,
+              y: 4,
+              z: 4,
               ease: "back.out(2.5)",
               duration: 0.7,
             },
@@ -95,7 +100,7 @@ export default class Preloader extends EventEmitter {
           .to(
             this.startingShape.position,
             {
-              y: 0.5,
+              y: 0,
               ease: "power1.out",
               duration: 0.7,
               //onComplete: resolve,
@@ -104,6 +109,8 @@ export default class Preloader extends EventEmitter {
           );
       }
 
+
+      //if (this.device === "desktop") {
       this.timeline
         .to(".intro-text .animatedis", {
           yPercent: 0,
@@ -116,9 +123,25 @@ export default class Preloader extends EventEmitter {
         .to(".toggle-bar", {
           opacity: 1,
           onComplete: resolve,
-        });
-    });
+        })//}
+      //   else {
+      //   this.timeline
+      //       .to(".intro-text-mobile .animatedis", {
+      //         yPercent: 0,
+      //         stagger: 0.07,
+      //         ease: "back.out(1.2)",
+      //       })
+      //       .to(".arrow-svg-wrapper", {
+      //         opacity: 1,
+      //       })
+      //       .to(".toggle-bar", {
+      //         opacity: 1,
+      //         onComplete: resolve,
+      //       })
+      // }
+    })
   }
+
 
   onScroll(e) {
     if (e.deltaY > 0) {
@@ -175,7 +198,7 @@ export default class Preloader extends EventEmitter {
         .to(
           ".intro-text .animatedis",
           {
-            yPercent: 100,
+            yPercent: 500,
             stagger: 0.07,
             ease: "back.inOut(1.2)",
           },
