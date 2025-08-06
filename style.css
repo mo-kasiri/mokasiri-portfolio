@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
   font-family: "Montserrat", "sans-serif";
   color: var(--text-black);
   overflow-x: hidden;
@@ -13,6 +14,7 @@ html,body{
 }
 
 body::-webkit-scrollbar {
+  background-color: var(--color-background-light);
   display: none; /* Chrome, Safari, Edge */
 }
 
@@ -20,7 +22,7 @@ h1,
 section,
 p,
 span,
-svg{
+svg {
   transition: background-color 0.5s, color 0.5s;
 }
 
@@ -28,60 +30,54 @@ svg{
   overflow: hidden;
 }*/
 
-
-
-:root{
-/*  --primary-color: #FAF4E5;
+:root {
+  /*  --primary-color: #FAF4E5;
   --primary-pink: #e5a1aa;*/
-  --color-blue-button: #8395CD;
+  --color-blue-button: #8395cd;
 
   /* Light Theme Variables */
-  --color-blue-button-light: #8395CD;
+  --color-blue-button-light: #8395cd;
   --color-text-light: #333332;
-  --color-background-light: #FAF4E5;
+  --color-background-light: #faf4e5;
   --color-pink-light: #e5a1aa;
-  --color-green-light: #7AD0AC;
-  --color-blue-light: #8395CD;
-  --color-green: #7AD0AC;
-  --color-blue: #8395CD;
-
+  --color-green-light: #7ad0ac;
+  --color-blue-light: #8395cd;
+  --color-green: #7ad0ac;
+  --color-blue: #8395cd;
 
   /* Dark Theme Variables */
-  --color-blue-button-dark: #8395CD;
-  --color-text-dark: #FAF4E5;
-  --color-background-dark: #8395CD;
+  --color-blue-button-dark: #8395cd;
+  --color-text-dark: #faf4e5;
+  --color-background-dark: #8395cd;
   --text-black: #333332;
 
   --card-height: 300px;
   --card-width: calc(var(--card-height) / 1.5);
 }
 
-
-
-.light-theme{
+.light-theme {
   --color-text: var(--color-text-light);
   --color-background: var(--color-background-light);
   --color-pink: var(--color-pink-light);
   --color-blue: var(--color-blue-light);
 }
 
-.dark-theme{
+.dark-theme {
   --color-text: var(--color-text-dark);
   --color-background: var(--color-background-dark);
   --color-pink: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.show{
+.show {
   display: block !important;
 }
 
 /* Experience -------------------------------*/
-
 
 a {
   text-decoration: none;
@@ -111,21 +107,20 @@ a:active {
   color: var(--color-text-dark);
 }
 
-.text_link:hover{
+.text_link:hover {
   color: var(--color-pink) !important;
 }
 
-.personal-image{
+.personal-image {
   border-radius: 50%;
   display: table-row;
   width: 200px;
   border: 5px solid var(--color-text);
   position: relative;
   right: 0;
-
 }
 
-.download-button{
+.download-button {
   width: 30%;
   letter-spacing: 0.6px;
   float: left;
@@ -143,30 +138,29 @@ a:active {
   color: #636363;
 }
 
-.download-button:hover{
+.download-button:hover {
   background-color: var(--color-pink);
 }
 
-.download-button:active{
+.download-button:active {
   background-color: var(--color-background);
 }
 
-
-.experience{
+.experience {
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
 
-.experience-canvas{
+.experience-canvas {
   width: 100%;
   height: 100%;
 }
 
-.arrow-svg-wrapper{
+.arrow-svg-wrapper {
   position: absolute;
   top: 92%;
-  left:50%;
+  left: 50%;
   opacity: 0;
   /*font-size: 25px;*/
   color: var(--color-text);
@@ -174,18 +168,17 @@ a:active {
   animation: bounce 0.5s ease-in alternate infinite;
 }
 
-@keyframes bounce{
-  0%{
+@keyframes bounce {
+  0% {
     transform: translateY(0px);
   }
-  100%{
+  100% {
     transform: translateY(8px);
   }
 }
 
-
 /* Toggle Bar ---------------------------------*/
-.toggle-bar{
+.toggle-bar {
   opacity: 0;
   position: fixed;
   display: flex;
@@ -199,14 +192,15 @@ a:active {
   color: var(--color-text);
 }
 
-.sun-wrapper, .moon-wrapper{
+.sun-wrapper,
+.moon-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.toggle-button{
+.toggle-button {
   cursor: pointer;
   position: relative;
   width: 56px;
@@ -221,11 +215,11 @@ a:active {
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
-.toggle-button:hover .toggle-circle{
+.toggle-button:hover .toggle-circle {
   transform: scale(0.9);
 }
 
-.toggle-circle{
+.toggle-circle {
   position: absolute;
   left: 6px;
   border-radius: 15px;
@@ -235,19 +229,20 @@ a:active {
   transition: all 0.2s ease-in-out;
 }
 
-.slide{
+.slide {
   left: 28px;
 }
 
 /* preloader */
-.preloader{
+.preloader {
   background-color: var(--color-background-light);
   opacity: 1;
   width: 100%;
   z-index: 999999999999;
 }
 
-.preloader-wrapper{
+.preloader-wrapper {
+  background-color: var(--color-background-light);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -256,13 +251,13 @@ a:active {
   height: 100%;
 }
 
-.loading{
+.loading {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.circle{
+.circle {
   width: 10px;
   height: 10px;
   margin: 6px;
@@ -271,41 +266,40 @@ a:active {
   animation: load 1s ease-in-out infinite;
 }
 
-.circle:nth-child(2){
+.circle:nth-child(2) {
   animation-delay: 0.1s;
 }
 
-.circle:nth-child(3){
+.circle:nth-child(3) {
   animation-delay: 0.2s;
 }
 
 @keyframes load {
-  0%{
+  0% {
     transform: translateY(0);
   }
- 20%{
+  20% {
     transform: translateY(-12px);
- }
- 40%{
+  }
+  40% {
     transform: translateY(0);
   }
 }
 
 /* Page itself -------------------------------------------------------------------------------------------------------*/
-.page{
+.page {
   z-index: 9999;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-.page-wrapper{
+.page-wrapper {
   position: relative;
 }
 
-
 /* Preloader stuff */
-.animatedis{
+.animatedis {
   display: inline-block;
   transform: translateY(100%);
 }
@@ -319,7 +313,7 @@ a:active {
   position: relative;
 }
 
-.intro-text{
+.intro-text {
   display: none;
   font-weight: 500;
   font-size: 20px;
@@ -328,16 +322,15 @@ a:active {
 }
 
 /* Section Formatting ---------------------------- */
-.first-section{
+.first-section {
   margin-top: 0px;
 }
-.section-margin{
+.section-margin {
   height: 100vh;
   width: 100%;
 }
 
-
-.section{
+.section {
   position: relative;
   width: 50%;
   padding: 300px 4%;
@@ -345,38 +338,38 @@ a:active {
   background-color: var(--color-background);
   overflow: hidden;
 }
-.left{
+.left {
   margin-right: auto;
   border-top-right-radius: 700px 700px;
   border-bottom-right-radius: 0px 0px;
 }
 
-.right{
+.right {
   margin-left: auto;
   border-top-left-radius: 700px 700px;
   border-bottom-left-radius: 0px 0px;
 }
 
 /* Progress Bars */
-.progress-wrapper{
+.progress-wrapper {
   height: 0;
   width: 12px;
   z-index: 9999;
 }
 
-.progress-bar-wrapper-left{
+.progress-bar-wrapper-left {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 
-.progress-bar-wrapper-right{
+.progress-bar-wrapper-right {
   position: absolute;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
 }
 
-.progress-bar{
+.progress-bar {
   height: 100vh;
   width: 100%;
   background-color: var(--color-pink);
@@ -384,18 +377,18 @@ a:active {
   transform: scaleY(1);
 }
 
-.section-intro-wrapper{
+.section-intro-wrapper {
   position: relative;
   border-bottom: 2px solid var(--color-background);
   padding: 20% 5% 100px;
 }
 
-.section-intro-wrapper{
+.section-intro-wrapper {
   position: relative;
   border-bottom: 2px solid var(--color-pink);
 }
 
-.section-heading{
+.section-heading {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.8;
@@ -403,17 +396,17 @@ a:active {
   color: var(--color-text);
 }
 
-.my-name{
+.my-name {
   font-weight: bold;
   color: var(--color-pink);
 }
 
-.section-heading-sub{
+.section-heading-sub {
   padding-top: 10px;
   margin-top: 10px;
 }
 
-.section-text{
+.section-text {
   text-align: justify;
   line-height: 2;
   margin-top: 18px;
@@ -421,12 +414,14 @@ a:active {
 }
 
 /* Fancy decoration section */
-.section-title{
+.section-title {
   position: relative;
   color: var(--color-pink);
 }
 
-.styleOne, .styleTwo, .styleThree{
+.styleOne,
+.styleTwo,
+.styleThree {
   position: absolute;
   display: block;
   width: 100%;
@@ -435,7 +430,7 @@ a:active {
   border: 1px solid var(--color-pink);
 }
 
-.section-title-text{
+.section-title-text {
   font-size: 60px;
   font-weight: 500;
   transform-origin: left;
@@ -446,7 +441,7 @@ a:active {
   color: var(--color-pink);
 }
 
-.section-number{
+.section-number {
   font-size: 25px;
   font-weight: 500;
 }
@@ -456,7 +451,7 @@ a:active {
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  background: rgba(255, 255, 255, 0.60);
+  background: rgba(255, 255, 255, 0.6);
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
@@ -466,7 +461,6 @@ a:active {
   box-shadow: rgba(99, 99, 99, 0.08) 0px 2px 8px 0px;
 }
 
-
 .product-image {
   flex: 1 1 300px; /* Grow, shrink, min width */
   box-sizing: border-box;
@@ -474,7 +468,6 @@ a:active {
 }
 
 .product-details {
-
   padding: 20px;
   gap: 50px;
   text-align: left;
@@ -493,13 +486,12 @@ a:active {
   border-radius: 8px;
 }
 
-.card .product-details h1{
+.card .product-details h1 {
   display: inline-block;
   position: relative;
   font-size: 30px;
   color: #344055;
   margin: 0;
-
 }
 
 .information {
@@ -510,9 +502,8 @@ a:active {
   color: #7d7d7d;
   width: 100%;
   height: 100%;
-
 }
-.control{
+.control {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -520,7 +511,7 @@ a:active {
 .read-more {
   transform: translateY(0px);
   transition: 0.3s linear;
-  background:  var(--color-blue-button);
+  background: var(--color-blue-button);
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -530,10 +521,9 @@ a:active {
   color: #eee;
   padding: 0;
   margin: 0;
-
 }
 
-.read-more{
+.read-more {
   /*position: absolute;*/
   box-shadow: #333332 0px 2px 8px 0px;
   transition: transform 0.3s;
@@ -541,17 +531,18 @@ a:active {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.2em;
-  margin:0;
+  margin: 0;
 }
 
-.read-more:hover{
+.read-more:hover {
   /*transform: translateY(-6px);*/
   background: var(--color-pink);
 }
 
-
-
-.card img {width: 100%;height: 100%;}
+.card img {
+  width: 100%;
+  height: 100%;
+}
 
 @media (max-width: 768px) {
   .card {
@@ -564,63 +555,56 @@ a:active {
   }
 }
 
-
 /*.product-image:hover .info{transform: translateX(0);}
 .product-image:hover img {transition: all 0.3s ease-out;}
 .product-image:hover img {transform: scale(1.2, 1.2);}*/
 
-
-
-
-
 /* Hero section --------------------------------*/
-.hero{
+.hero {
   width: 100vw;
   height: 100vh;
 }
 
-.hero-wrapper{
+.hero-wrapper {
   position: relative;
   height: 100%;
   width: calc(100% - 200px);
   margin: 0 auto;
- /* max-width: 1100px;*/
+  /* max-width: 1100px;*/
 }
 
-.hero-main{
+.hero-main {
   position: absolute;
   bottom: 80px;
   left: 0;
   color: var(--color-text);
-
 }
 
-.hero-second{
+.hero-second {
   position: absolute;
   top: calc(50% - 100px);
   right: 0;
- /* background-color: rgba(255,255,255,0.35);*/
+  /* background-color: rgba(255,255,255,0.35);*/
   /*padding: 16px;*/
   /*border: white solid 2px;*/
   /*border-radius: 10px;*/
   /*border-color: rgba(255,255,255,0.6);*/
   color: var(--color-text);
 }
-.hero-main-title{
+.hero-main-title {
   font-size: 64px;
   color: var(--color-text);
 }
-.hero-main-description{
+.hero-main-description {
   font-size: 18px;
   color: var(--color-text);
 }
 
-.hero-second-subheading{
+.hero-second-subheading {
   font-size: 32px;
   text-transform: uppercase;
   color: var(--color-pink);
 }
-
 
 /* Other colors override */
 /*.blue-text{
@@ -646,20 +630,20 @@ a:active {
 
 /* Media Queries */
 
-@media(max-width: 968px){
-  .intro-text{
+@media (max-width: 968px) {
+  .intro-text {
     display: block;
     font-weight: 500;
     font-size: 20px;
     white-space: nowrap; /* Prevent text from wrapping */
     transform: translate(0, -10%);
   }
-  .section{
+  .section {
     width: 100%;
   }
-  .progress-bar-wrapper-left{
-    right:0;
-    left:auto;
+  .progress-bar-wrapper-left {
+    right: 0;
+    left: auto;
   }
   /*.hero-second{
     top: 100px;
@@ -674,23 +658,22 @@ a:active {
     font-size: 18px;
     text-align: -webkit-center;
   }*/
-  .hero-main{
+  .hero-main {
     bottom: 120px;
   }
-  .hero-wrapper{
+  .hero-wrapper {
     width: calc(100% - 10px);
   }
-  .hero-main-title{
+  .hero-main-title {
     font-size: 32px;
   }
-  .hero-main-description{
+  .hero-main-description {
     font-size: 10px;
   }
-  .hero-second-subheading{
+  .hero-second-subheading {
     font-size: 18px;
   }
-  .hero-second{
+  .hero-second {
     top: calc(50% - 200px);
   }
 }
-

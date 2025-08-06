@@ -51,7 +51,6 @@ export default class Preloader extends EventEmitter {
         onComplete: () => {
           document.querySelector(".preloader").classList.add(".hidden");
           document.querySelector(".intro-text").style.display = "block";
-          //document.querySelector(".intro-text-mobile").style.display = "block";
           document.querySelector(".hero-second").style.display = "block";
           document.querySelector(".hero-main").style.display = "block";
         },
@@ -109,8 +108,6 @@ export default class Preloader extends EventEmitter {
           );
       }
 
-
-      //if (this.device === "desktop") {
       this.timeline
         .to(".intro-text .animatedis", {
           yPercent: 0,
@@ -123,25 +120,9 @@ export default class Preloader extends EventEmitter {
         .to(".toggle-bar", {
           opacity: 1,
           onComplete: resolve,
-        })//}
-      //   else {
-      //   this.timeline
-      //       .to(".intro-text-mobile .animatedis", {
-      //         yPercent: 0,
-      //         stagger: 0.07,
-      //         ease: "back.out(1.2)",
-      //       })
-      //       .to(".arrow-svg-wrapper", {
-      //         opacity: 1,
-      //       })
-      //       .to(".toggle-bar", {
-      //         opacity: 1,
-      //         onComplete: resolve,
-      //       })
-      // }
-    })
+        });
+    });
   }
-
 
   onScroll(e) {
     if (e.deltaY > 0) {

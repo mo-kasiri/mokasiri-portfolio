@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,432 +7,558 @@
     <title>Mo Kasiri Portfolio</title>
   </head>
   <body class="light-theme">
-   <div class="experience">
-    <canvas class="experience-canvas"></canvas>
-   </div>
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
 
-   <!-- Preloader -->
+    <!-- Preloader -->
 
-   <div class="preloader">
-       <div class="preloader-wrapper">
-           <div class="loading">
-               <div class="circle"></div>
-               <div class="circle"></div>
-               <div class="circle"></div>
-           </div>
-       </div>
-   </div>
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
 
-   <div class="page">
+    <div class="page">
+      <div class="toggle-bar">
+        <div class="sun-wrapper">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+          >
+            <path
+              fill="currentColor"
+              d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"
+            />
+          </svg>
+        </div>
+        <button class="toggle-button">
+          <span class="toggle-circle"></span>
+        </button>
+        <div class="moon-wrapper">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+          >
+            <path
+              fill="currentColor"
+              d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"
+            />
+          </svg>
+        </div>
+      </div>
 
-       <div class="toggle-bar">
-           <div class="sun-wrapper">
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" ><path fill="currentColor" d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"/></svg>
-           </div>
-           <button class="toggle-button">
-               <span class="toggle-circle"></span>
-           </button>
-           <div class="moon-wrapper">
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path fill="currentColor" d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
-           </div>
-       </div>
+      <div class="page-wrapper">
+        <section class="hero">
+          <div class="hero-wrapper">
+            <!-- Intro -->
+            <div class="arrow-svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="50px"
+                viewBox="0 -960 960 960"
+                width="50px"
+              >
+                <path
+                  fill="currentColor"
+                  d="M460.81-393.04 334.76-519.08q-2.6-2.61-4.1-5.83-1.5-3.21-1.5-6.89 0-7.35 4.97-12.78 4.97-5.42 13.1-5.42h265.54q8.13 0 13.1 5.48 4.97 5.47 4.97 12.77 0 1.83-5.61 12.67L499.19-393.04q-4.34 4.35-8.98 6.35-4.64 2-10.21 2-5.57 0-10.21-2-4.64-2-8.98-6.35Z"
+                />
+              </svg>
+            </div>
 
-       <div class="page-wrapper">
-           <section class="hero">
-               <div class="hero-wrapper">
+            <div class="intro-container">
+              <div class="intro-text">Welcome to my portfolio</div>
+            </div>
+            <div class="hero-main hidden">
+              <h1 class="hero-main-title">Mo Kasiri</h1>
+              <p class="hero-main-description">Master of Art in Multimedia | Computer Graphics and HCI</p>
+            </div>
+            <div class="hero-second hidden">
+              <h1 class="first-sub hero-second-subheading">Mo Kasiri</h1>
+              <p class="second-sub hero-second-subheading">Portfolio</p>
+            </div>
+          </div>
+        </section>
 
-                   <!-- Intro -->
-                   <div class="arrow-svg-wrapper">
-                       <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"><path fill="currentColor" d="M460.81-393.04 334.76-519.08q-2.6-2.61-4.1-5.83-1.5-3.21-1.5-6.89 0-7.35 4.97-12.78 4.97-5.42 13.1-5.42h265.54q8.13 0 13.1 5.48 4.97 5.47 4.97 12.77 0 1.83-5.61 12.67L499.19-393.04q-4.34 4.35-8.98 6.35-4.64 2-10.21 2-5.57 0-10.21-2-4.64-2-8.98-6.35Z"/></svg>
-                   </div>
+        <div class="first-move section-margin"></div>
 
-                   <div class="intro-container">
-                       <div class="intro-text">
-                           Welcome to my portfolio
-                       </div>
-                   </div>
-                   <div class="hero-main hidden">
-                       <h1 class="hero-main-title">Mo Kasiri</h1>
-                       <p class="hero-main-description">Master of Art in Multimedia | Computer Graphics, Virtual Reality and HCI</p>
-                   </div>
-                   <div class="hero-second hidden">
-                       <h1 class="first-sub hero-second-subheading">Mo Kasiri</h1>
-                       <p class="second-sub hero-second-subheading">Portfolio</p>
-                   </div>
-               </div>
-           </section>
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar pink-background"></div>
+          </div>
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">About Me</span>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h1
+              class="section-text"
+              style="font-size: 40px; display: table-row"
+            >
+              Hello!
+            </h1>
+            <img
+              class="personal-image"
+              src="./public/images/my_image.jpg"
+              alt="my personal image"
+            />
+            <h3 class="section-text">
+              I'm <span class="my-name">Mohammad Kasiri</span>
+            </h3>
+            <p class="section-text">
+              I'm a researcher and developer working with VR/XR and 3D graphics,
+              interactions and visualization techniques. I develop 3D systems
+              with many technologies including Unity, Oculus Quest, WebGL and
+              OpenGL.
+            </p>
 
-           <div class="first-move section-margin"></div>
+            <h3 class="section-heading">My Education</h3>
+            <p class="section-text">
+              I have always had a strong interest in technology and how it can
+              be used to communicate and convey information, whether in video,
+              audio, graphics, or animation. So, I tried my best to be admitted
+              to the best universities in Iran, and I chose electrical
+              engineering at the Isfahan University of Technology. The first
+              years of my undergraduate studies were not as exciting as I
+              expected, and I did not feel satisfied with the theoretical
+              courses. As I delved deeper and explored other areas of
+              technology, I became increasingly drawn to the field of
+              multimedia. In my senior year of studying electrical engineering,
+              I joined BOKS company and developed my passion for interactive
+              media, and gained experience as an adver-game designer and
+              developer. My work involved designing and developing interactive
+              experiences that leveraged technology’s unique capabilities to
+              engage users and promote products or services. In doing so, I
+              tried and utilized various technologies, such as Microsoft Kinect,
+              microcontrollers, game engines, and multiple sensors, to create
+              interactive advertisements
+              <a
+                class="text_link"
+                href="https://www.youtube.com/playlist?list=PLAPP2lxY9kfZZpfYRk59DPURmyBfkwEBM"
+                target="_blank"
+                >(video links)</a
+              >. Working in a small startup gave me surface-level experience in
+              interactive media, such as advergames and serious games. So, I
+              decided to continue my education in multimedia to deep-dive, and
+              then I studied for Iran’s Nationwide University Entrance Exam. Due
+              to my excellent performance on the exam, I was able to continue my
+              studies at Tabriz Islamic Art University, the only university in
+              Iran that offers a master’s degree in multimedia.
+            </p>
+            <p class="section-text">
+              As a graduate in Electrical Engineering and a Master’s student in
+              multimedia, I have developed a strong foundation in both technical
+              and creative fields. Through my coursework and research
+              experiences, I have gained knowledge in various areas of
+              Engineering, including mathematics, statistics, soft computing,
+              and control systems. My studies in multimedia have also equipped
+              me with expertise in computer graphics, computer vision, machine
+              learning. This interdisciplinary background has allowed me to
+              approach problems from different angles and provided me with
+              diverse skill sets.
+            </p>
 
-           <section class="first-section section left">
-               <div class="progress-wrapper progress-bar-wrapper-left">
-                   <div class="progress-bar pink-background"></div>
-               </div>
-               <div class="section-intro-wrapper">
-                   <h1 class="section-title">
-                       <span class="section-title-text">About Me</span>
-                   </h1>
-                   <span class="section-number">01</span>
+            <h3 class="section-heading">Master Thesis</h3>
+            <p class="section-text">
+              <span>
+                My master’s thesis is
+                <b>
+                  “Analysis of Body Gesture as a Nonverbal Communication in
+                  Metaverse,”</b
+                >
+                in which I utilized WebGL and computer vision technologies. I
+                aim to enhance the nonverbal communication experience within a
+                virtual three-dimensional (Social VR) setting. I achieved this
+                by capturing the user’s hands movements using an RGB webcam and
+                replicating them onto a 3D avatar. This technology will allow
+                users to express themselves more effectively through physical
+                gestures and movements, thus creating a more immersive and
+                engaging virtual environment
+                <a
+                  class="text_link"
+                  href="https://github.com/mo-kasiri/MO-Taverse"
+                  target="_blank"
+                  >(GitHub link)</a
+                >
+                <a
+                  class="text_link"
+                  href="https://mo-kasiri.github.io/MO-Taverse/"
+                  target="_blank"
+                  >(final application)</a
+                >.
+              </span>
+            </p>
+          </div>
 
-               </div>
-               <div class="section-detail-wrapper">
-                    <h1 class="section-text" style="font-size: 40px; display: table-row;">Hello!</h1>
-                   <img class="personal-image" src="./public/images/my_image.jpg" alt="my personal image">
-                   <h3 class="section-text">
-                       I'm <span class="my-name">Mohammad Kasiri</span>
-                   </h3>
-                    <p class="section-text">
-                        I'm a researcher and developer working with VR/XR and 3D graphics, interactions
-                        and visualization techniques. I develop 3D systems with many technologies including Unity,
-                        Oculus Quest, WebGL and OpenGL.
-                    </p>
+          <!-- <a href="./public/files/MoKasiriCV.pdf"><button class="read-more" >DOWNLOAD CV</button></a>-->
+        </section>
 
+        <div class="second-move section-margin"></div>
 
-                   <h3 class="section-heading">My Education</h3>
-                   <p class="section-text">
-
-                       I have always had a strong interest in technology and how it can be used to
-                       communicate and convey information, whether in video, audio, graphics,
-                       or animation. So, I tried my best to be admitted to the best universities
-                       in Iran, and I chose electrical engineering at the Isfahan University of Technology.
-                       The first years of my undergraduate studies were not as exciting as I expected,
-                       and I did not feel satisfied with the theoretical courses. As I delved deeper and
-                       explored other areas of technology, I became increasingly drawn to the field of multimedia.
-                       In my senior year of studying electrical engineering, I joined BOKS company and developed
-                       my passion for interactive media, and gained experience as an adver-game designer and developer.
-                       My work involved designing and developing interactive experiences that leveraged technology’s
-                       unique capabilities to engage users and promote products or services. In doing so, I tried and
-                       utilized various technologies, such as Microsoft Kinect, microcontrollers, game engines, and multiple
-                       sensors, to create interactive advertisements <a class="text_link" href="https://www.youtube.com/playlist?list=PLAPP2lxY9kfZZpfYRk59DPURmyBfkwEBM" target="_blank">(video links)</a>.  Working in a small startup gave me
-                       surface-level experience in interactive media, such as advergames and serious games.
-                       So, I decided to continue my education in multimedia to deep-dive, and then I studied for Iran’s
-                       Nationwide University Entrance Exam. Due to my excellent performance on the exam, I was able to
-                       continue my studies at Tabriz Islamic Art University, the only university in Iran that offers a master’s degree in multimedia.
-                   </p>
-                   <p class="section-text">
-                       As a graduate in Electrical Engineering and a Master’s student in multimedia,
-                       I have developed a strong foundation in both technical and creative fields.
-                       Through my coursework and research experiences, I have gained knowledge in various areas
-                       of Engineering, including mathematics, statistics, soft computing, and control systems.
-                       My studies in multimedia have also equipped me with expertise in computer graphics, computer vision,
-                       machine learning. This interdisciplinary background has allowed me to approach problems from different
-                       angles and provided me with diverse skill sets.
-                   </p>
-
-                   <h3 class="section-heading">Master Thesis</h3>
-                   <p class="section-text">
-                   <span>
-                        My master’s thesis is <b> “Analysis of Body Gesture as a Nonverbal Communication in Metaverse,”</b>
-                       in which I utilized WebGL and computer vision technologies. I aim to enhance the nonverbal communication
-                       experience within a virtual three-dimensional (Social VR) setting. I achieved this by capturing the user’s
-                       hands movements using an RGB webcam and replicating them onto a 3D avatar. This technology will allow users to
-                       express themselves more effectively through physical gestures and movements, thus creating a more immersive and
-                       engaging virtual environment <a class="text_link" href="https://github.com/mo-kasiri/MO-Taverse" target="_blank">(GitHub link)</a> <a class="text_link" href="https://mo-kasiri.github.io/MO-Taverse/" target="_blank">(final application)</a>.
-                   </span>
-                   </p>
-               </div>
-
-              <!-- <a href="./public/files/MoKasiriCV.pdf"><button class="read-more" >DOWNLOAD CV</button></a>-->
-           </section>
-
-
-           <div class="second-move section-margin"></div>
-
-
-           <section class="second-section section right">
-               <div class="progress-wrapper progress-bar-wrapper-right">
-                   <div class="progress-bar blue-background">
-
-                   </div>
-               </div>
-               <div class="section-intro-wrapper blue-text">
-                   <h1 class="section-title blue-text blue-border">
-                       <span class="section-title-text blue-text">Research</span>
-                       <!--<div class="section-title-decoration styleOne blue-border"></div>
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+          <div class="section-intro-wrapper blue-text">
+            <h1 class="section-title blue-text blue-border">
+              <span class="section-title-text blue-text">Research</span>
+              <!--<div class="section-title-decoration styleOne blue-border"></div>
                        <div class="section-title-decoration styleTwo blue-border"></div>
                        <div class="section-title-decoration styleThree blue-border"></div>-->
-                   </h1>
-                   <span class="section-number blue-text">02</span>
-               </div>
-               <div class="section-detail-wrapper">
-                   <h3 class="section-heading">Publications</h3>
-                   <p class="section-text">
-                       A substantial portion of my work at the graduate level has involved researching multimedia technologies,
-                       and I have developed several media projects for my master’s courses.
-                       <h4 class="section-heading-sub">“Visualization of advertising game campaigns data for comprehensive analysis.”</h4>
-                       <p class="section-text">
-                       In 2022, I wrote a research paper titled “Visualization of advertising game campaigns data for comprehensive analysis.” This paper was the
-                       final project of the data visualization course, and I am proud to mention that I achieved a perfect score
-                       of 20 out of 20 for it. In this project, I leveraged my skills in web development and utilized the D3.js library
-                       to design an interactive web application. This application visualized advergame data, allowing for analysis and interpretation <a href="https://github.com/mo-kasiri/Adver-gameDatavisualization">(github link)</a> <a href="https://www.youtube.com/watch?v=sgq2ULzG1pQ" target="_blank">(video)</a>.
-                       Furthermore, I had the privilege of presenting it at the CGCO 2022 conference in Iran.
-                        </p>
-                       <h4  class="section-heading-sub">"Personnel Selection in Multimedia Projects: A Case Study of Designer Selection"</h4>
-                       <p class="section-text">
-                           The final project of “Project Management“ course <a href="https://en.civilica.com/doc/2083646/" target="_blank">(Paper_Link)</a>
-                        </p>
-                       <h4 class="section-heading-sub">“Designing and analyzing the effect of «Sargent» Kinect-based serious game on the lower body muscles of male students of Tabriz University of Islamic Arts”</h4>
-                       <p class="section-text">
-                           Biennial International Congress on New Challenges of Sport Sciences and Health on the Silk Road, 2022
-                           <a href="https://www.youtube.com/shorts/YPiE0ReGXjk">(video)</a> <a href="" target="_blank"> (GitHub and Paper Link)</a>
-                        </p>
-                   <h4 class="section-heading-sub">“Analysis of Body Gesture as a Nonverbal Communication in Metaverse,”</h4>
-                   <p class="section-text">
-                   <span>
-                        My master’s thesis is “Analysis of Body Gesture as a Nonverbal Communication in Metaverse,”
-                       in which I utilized WebGL and computer vision technologies. I aim to enhance the nonverbal communication
-                       experience within a virtual three-dimensional (Social VR) setting. I achieved this by capturing the user’s
-                       hands movements using an RGB webcam and replicating them onto a 3D avatar. This technology will allow users to
-                       express themselves more effectively through physical gestures and movements, thus creating a more immersive and
-                       engaging virtual environment <a href="https://github.com/mo-kasiri/MO-Taverse" target="_blank">(github link)</a> <a href="https://mo-kasiri.github.io/MO-Taverse/" target="_blank">(final application)</a>.
-                   </span>
-                   </p>
-               </div>
-           </section>
+            </h1>
+            <span class="section-number blue-text">02</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Publications</h3>
+            <p class="section-text">
+              A substantial portion of my work at the graduate level has
+              involved researching multimedia technologies, and I have developed
+              several media projects for my master’s courses.
+            </p>
 
-           <div class="third-move section-margin"></div>
+            <h4 class="section-heading-sub">
+              “Visualization of advertising game campaigns data for
+              comprehensive analysis.”
+            </h4>
+            <p class="section-text">
+              In 2022, I wrote a research paper titled “Visualization of
+              advertising game campaigns data for comprehensive analysis.” This
+              paper was the final project of the data visualization course, and
+              I am proud to mention that I achieved a perfect score of 20 out of
+              20 for it. In this project, I leveraged my skills in web
+              development and utilized the D3.js library to design an
+              interactive web application. This application visualized advergame
+              data, allowing for analysis and interpretation
+              <a href="https://github.com/mo-kasiri/Adver-gameDatavisualization"
+                >(github link)</a
+              >
+              <a
+                href="https://www.youtube.com/watch?v=sgq2ULzG1pQ"
+                target="_blank"
+                >(video)</a
+              >. Furthermore, I had the privilege of presenting it at the CGCO
+              2022 conference in Iran.
+            </p>
+            <h4 class="section-heading-sub">
+              "Personnel Selection in Multimedia Projects: A Case Study of
+              Designer Selection"
+            </h4>
+            <p class="section-text">
+              The final project of “Project Management“ course Published in: 1st
+              international conference on information technology, management and
+              computer
+              <a href="https://en.civilica.com/doc/2083646/" target="_blank"
+                >(Paper_Link)</a
+              >
+            </p>
+            <h4 class="section-heading-sub">
+              “Designing and analyzing the effect of «Sargent» Kinect-based
+              serious game on the lower body muscles of male students of Tabriz
+              University of Islamic Arts”
+            </h4>
+            <p class="section-text">
+              Biennial International Congress on New Challenges of Sport
+              Sciences and Health on the Silk Road, 2022
+              <a href="https://www.youtube.com/shorts/YPiE0ReGXjk">(video)</a>
+              <a href="" target="_blank"> (GitHub and Paper Link)</a>
+            </p>
+            <h4 class="section-heading-sub">
+              “From Motion to Meaning: Improving Learning Engagement in VR with
+              Hand Gesture Integration,”
+            </h4>
+            <p class="section-text">
+              <span>
+                Derived from my master thesis: Analysis of Body Gestures as
+                Nonverbal Communication in Metaverse (In review at Interactive
+                Technology and Smart Education Journal) My master’s thesis is
+                “Analysis of Body Gesture as a Nonverbal Communication in
+                Metaverse,” in which I utilized WebGL and computer vision
+                technologies. I aim to enhance the nonverbal communication
+                experience within a virtual three-dimensional (Social VR)
+                setting. I achieved this by capturing the user’s hands movements
+                using an RGB webcam and replicating them onto a 3D avatar. This
+                technology will allow users to express themselves more
+                effectively through physical gestures and movements, thus
+                creating a more immersive and engaging virtual environment
+                <a
+                  href="https://github.com/mo-kasiri/MO-Taverse"
+                  target="_blank"
+                  >(github link)</a
+                >
+                <a
+                  href="https://mo-kasiri.github.io/MO-Taverse/"
+                  target="_blank"
+                  >(final application)</a
+                >.
+              </span>
+            </p>
+          </div>
+        </section>
 
-           <section class="third-section section left">
-               <div class="progress-wrapper progress-bar-wrapper-left">
-                   <div class="progress-bar green-background">
+        <div class="third-move section-margin"></div>
 
-                   </div>
-               </div>
-               <div class="section-intro-wrapper green-text">
-                   <h1 class="section-title green-text green-border">
-                       <span class="section-title-text green-text">My Projects</span>
-                   </h1>
-                   <span class="section-number green-text">03</span>
-               </div>
-               <div class="section-detail-wrapper">
+        <section class="third-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar green-background"></div>
+          </div>
+          <div class="section-intro-wrapper green-text">
+            <h1 class="section-title green-text green-border">
+              <span class="section-title-text green-text">My Projects</span>
+            </h1>
+            <span class="section-number green-text">03</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <div class="card">
+              <div class="control">
+                <a
+                  href="https://github.com/mo-kasiri/MO-Taverse"
+                  target="_blank"
+                >
+                  <button class="read-more">Read More</button>
+                </a>
+              </div>
+              <div class="product-details">
+                <h1>Mo-Taverse</h1>
+                <p class="information">
+                  This app is part of my master's thesis “Analysis of Body
+                  Gesture as a Nonverbal Communication in Metaverse.” We aim to
+                  enhance the nonverbal communication experience within a
+                  virtual three-dimensional (Social VR) setting. The application
+                  captures the user's hand movements using an RGB webcam and
+                  replicates them onto a 3D avatar.
+                </p>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/master_thesis.png" alt="image" />
+              </div>
+            </div>
 
-                   <div class="card">
-                       <div class="control">
-                           <a href="https://github.com/mo-kasiri/MO-Taverse" target="_blank">
-                               <button class="read-more">
-                                   Read More
-                               </button>
-                           </a>
-                       </div>
-                       <div class="product-details">
-                           <h1>Mo-Taverse</h1>
-                           <p class="information">
-                               This app is part of my master's thesis “Analysis of Body Gesture as a Nonverbal Communication
-                               in Metaverse.” We aim to enhance the nonverbal communication experience within a virtual
-                               three-dimensional (Social VR) setting. The application captures the user's hand movements
-                               using an RGB webcam and replicates them onto a 3D avatar.
+            <div class="card">
+              <div class="product-details">
+                <h1>CPU Renderer</h1>
+                <p class="information">
+                  In this project, I try to develop a simple (based on C
+                  programming language and SDL library) 3D rasterization
+                  renderer, which works entirely on the CPU.
+                </p>
+                <div class="control">
+                  <a
+                    href="https://github.com/mo-kasiri/CPU-3D-Renderer"
+                    target="_blank"
+                  >
+                    <button class="read-more">Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/cpu_renderer.png" alt="image" />
+              </div>
+            </div>
 
-                           </p>
+            <div class="card">
+              <div class="product-details">
+                <h1>Short Animation</h1>
+                <p class="information">
+                  Short Animation for Master's VFX course in Unreal Engine,
+                  Blender, SubstancePainter, MarvelousDesigner
+                </p>
+                <div class="control">
+                  <a href="https://youtu.be/baZMvOcxuvQ" target="_blank">
+                    <button class="read-more">Watch Demo</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/jovaiber.png" alt="image" />
+              </div>
+            </div>
 
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/master_thesis.png" alt="image">
-                       </div>
+            <div class="card">
+              <div class="product-details">
+                <h1>Catch-Ball Game</h1>
+                <p class="information">
+                  Multiple sclerosis (MS) is a condition that can affect the
+                  brain and spinal cord, causing a wide range of potential
+                  symptoms, including problems with vision, arm or leg movement,
+                  sensation, or balance. We have designed an exergame using
+                  computer vision for arm rehabilitation in individuals with
+                  multiple sclerosis.
+                </p>
+                <div class="control">
+                  <a
+                    href="https://github.com/mo-kasiri/catch_ball"
+                    target="_blank"
+                  >
+                    <button class="read-more">Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/catch-ball.png" alt="image" />
+              </div>
+            </div>
 
-                   </div>
+            <div class="card">
+              <div class="product-details">
+                <h1>Labels in 3D Environment</h1>
+                <p class="information">
+                  When exposing ideas in a digital environment it is often
+                  important to create labels for objects and correctly place
+                  them. This holds true for 3D applications.
+                </p>
+                <div class="control">
+                  <a
+                    href="https://mo-kasiri.github.io/3D-Labels_UX/"
+                    target="_blank"
+                  >
+                    <button class="read-more">Visit Demo</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/ux-helmet.png" alt="image" />
+              </div>
+            </div>
 
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>CPU Renderer</h1>
-                           <p class="information">
-                               In this project, I try to develop a simple (based on C programming language and SDL library) 3D rasterization renderer, which works entirely on the CPU.
-                           </p>
-                           <div class="control">
-                               <a href="https://github.com/mo-kasiri/CPU-3D-Renderer" target="_blank">
-                                   <button class="read-more">
-                                       Read More
-                                   </button>
-                               </a>
+            <div class="card">
+              <div class="product-details">
+                <h1>WebXR Labels in Virtual Reality</h1>
+                <p class="information">
+                  When exposing ideas in a digital environment it is often
+                  important to create labels for objects and correctly place
+                  them. This holds true for Virtual Reality.
+                </p>
+                <div class="control">
+                  <a
+                    href="https://github.com/mo-kasiri/3d-labels-vr"
+                    target="_blank"
+                  >
+                    <button class="read-more">Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/ux-vr-helmet.png" alt="image" />
+              </div>
+            </div>
 
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/cpu_renderer.png" alt="image">
-                       </div>
+            <div class="card">
+              <div class="product-details">
+                <h1>Remote PID Controller Robot</h1>
+                <p class="information">
+                  The objective of this project is to develop a
+                  distance-sensitive robot capable of maintaining a safe
+                  distance from objects in front of it while responding to input
+                  commands for movement and positioning via a mobile device. The
+                  robot's control is achieved through a PID controller, which
+                  receives control variables and distance information from a
+                  smartphone application.
+                </p>
+                <div class="control">
+                  <a
+                    href="https://github.com/mo-kasiri/Bachelor_Final_Project"
+                    target="_blank"
+                  >
+                    <button class="read-more">Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/BSC-project.png" alt="image" />
+              </div>
+            </div>
 
-                   </div>
+            <div class="card">
+              <div class="product-details">
+                <h1>Visualizing Adver-Game Campaigns Data</h1>
+                <p class="information">
+                  A web-application interactive data visualization system
+                  created by javascript libraries including D3.js version3,
+                  nodeJS and Jquery.js
+                </p>
+                <div class="control">
+                  <a
+                    href="https://www.youtube.com/watch?v=sgq2ULzG1pQ"
+                    target="_blank"
+                  >
+                    <button class="read-more">Watch Video</button>
+                  </a>
 
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>Short Animation</h1>
-                           <p class="information">
-                               Short Animation for Master's VFX course in Unreal Engine, Blender, SubstancePainter, MarvelousDesigner
-                           </p>
-                           <div class="control">
-                               <a href="https://youtu.be/baZMvOcxuvQ" target="_blank">
-                                   <button class="read-more">
-                                       Watch Demo
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/jovaiber.png" alt="image">
-                       </div>
-                   </div>
+                  <a
+                    href="https://github.com/mo-kasiri/Adver-gameDatavisualization"
+                    target="_blank"
+                  >
+                    <button class="read-more">Read More</button>
+                  </a>
+                </div>
+              </div>
+              <div class="product-image">
+                <img src="/images/projects/CampVizDemo-min.png" alt="image" />
+              </div>
+            </div>
+          </div>
+        </section>
 
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>Catch-Ball Game </h1>
-                           <p class="information">
-                               Multiple sclerosis (MS) is a condition that can affect the brain and spinal cord,
-                               causing a wide range of potential symptoms, including problems with vision, arm or leg movement,
-                               sensation, or balance. We have designed an exergame using computer vision for arm rehabilitation
-                               in individuals with multiple sclerosis.
-                           </p>
-                           <div class="control">
-                               <a href="https://github.com/mo-kasiri/catch_ball" target="_blank">
-                                   <button class="read-more">
-                                       Read More
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/catch-ball.png" alt="image">
-                       </div>
-                   </div>
+        <div class="forth-move section-margin"></div>
 
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>Labels in 3D Environment</h1>
-                           <p class="information">
-                               When exposing ideas in a digital environment it is often important to create labels for objects
-                               and correctly place them. This holds true for 3D applications.
-                           </p>
-                           <div class="control">
-                               <a href="https://mo-kasiri.github.io/3D-Labels_UX/" target="_blank">
-                                   <button class="read-more">
-                                       Visit Demo
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/ux-helmet.png" alt="image">
-                       </div>
-                   </div>
-
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>WebXR Labels in Virtual Reality</h1>
-                           <p class="information">
-                               When exposing ideas in a digital environment it is often important to create labels for objects
-                               and correctly place them. This holds true for Virtual Reality.
-                           </p>
-                           <div class="control">
-                               <a href="https://github.com/mo-kasiri/3d-labels-vr" target="_blank">
-                                   <button class="read-more">
-                                       Read More
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/ux-vr-helmet.png" alt="image">
-                       </div>
-                   </div>
-
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>Remote PID Controller Robot</h1>
-                           <p class="information">
-                               The objective of this project is to develop a distance-sensitive
-                               robot capable of maintaining a safe distance from objects in front
-                               of it while responding to input commands for movement and positioning
-                               via a mobile device. The robot's control is achieved through a PID controller,
-                               which receives control variables and distance information from a smartphone application.
-                           </p>
-                           <div class="control">
-                               <a href="https://github.com/mo-kasiri/Bachelor_Final_Project" target="_blank">
-                                   <button class="read-more">
-                                       Read More
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/BSC-project.png" alt="image">
-                       </div>
-                   </div>
-
-                   <div class="card">
-                       <div class="product-details">
-                           <h1>Visualizing Adver-Game Campaigns Data</h1>
-                           <p class="information">
-                               A web-application interactive data visualization system created by javascript libraries including D3.js version3, nodeJS and Jquery.js
-                           </p>
-                           <div class="control">
-                               <a href="https://www.youtube.com/watch?v=sgq2ULzG1pQ" target="_blank">
-                                   <button class="read-more">
-                                       Watch Video
-                                   </button>
-                               </a>
-
-                               <a href="https://github.com/mo-kasiri/Adver-gameDatavisualization" target="_blank">
-                                   <button class="read-more">
-                                       Read More
-                                   </button>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="product-image">
-                           <img src="/images/projects/CampVizDemo-min.png" alt="image">
-                       </div>
-                   </div>
-               </div>
-           </section>
-
-           <div class="forth-move section-margin"></div>
-
-           <section class="forth-section section right">
-               <div class="progress-wrapper progress-bar-wrapper-right">
-                   <div class="progress-bar green-background">
-
-                   </div>
-               </div>
-               <div class="section-intro-wrapper green-text">
-                   <h1 class="section-title green-text green-border">
-                       <span class="section-title-text green-text">Contact Me</span>
-                       <!--<div class="section-title-decoration styleOne green-border"></div>
+        <section class="forth-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar green-background"></div>
+          </div>
+          <div class="section-intro-wrapper green-text">
+            <h1 class="section-title green-text green-border">
+              <span class="section-title-text green-text">Contact Me</span>
+              <!--<div class="section-title-decoration styleOne green-border"></div>
                        <div class="section-title-decoration styleTwo green-border"></div>
                        <div class="section-title-decoration styleThree green-background green-border"></div>-->
-                   </h1>
-                   <span class="section-number green-text">04</span>
-               </div>
-               <div class="section-detail-wrapper">
-                   <!-- <h3 class="section-heading">Contact Me</h3>-->
-                   <p class="section-text">
-                   <h4 class="section-heading-sub">Email</h4>
-                   <p class="section-text">
-                       mo.kasiri1996@gmail.com
-                   </p>
-                   <p class="section-text">
-                       mo.kasiri@tabriziau.ac.ir (University Email)
-                   </p>
-                   <h3 class="section-heading">Linkedin</h3>
-                   <p class="section-text">
-                       <a href="https://www.linkedin.com/in/mohammad-kasiri-979b8513a/" target="_blank">Linkedin</a>
-                   </p>
-                   <h3 class="section-heading">GitHub</h3>
-                   <p class="section-text">
-                       <a href="https://www.github.com/mo-kasiri" target="_blank">GitHub</a>
-                   </p>
-                   <h3 class="section-heading">YouTube</h3>
-                   <p class="section-text">
-                       <a href="https://www.youtube.com/@mokasiri" target="_blank">YouTube</a>
-                   </p>
-                   <h3 class="section-heading">Phone Number</h3>
-                   <p class="section-text">
-                       (+98)9135937030
-                   </p>
-               </div>
-           </section>
+            </h1>
+            <span class="section-number green-text">04</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <!-- <h3 class="section-heading">Contact Me</h3>-->
+            <p class="section-text"></p>
+            <h4 class="section-heading">Email</h4>
+            <p class="section-text">mo.kasiri1996@gmail.com</p>
+            <p class="section-text">
+              mo.kasiri@tabriziau.ac.ir (University Email)
+            </p>
+            <h3 class="section-heading">Linkedin</h3>
+            <p class="section-text">
+              <a
+                href="https://www.linkedin.com/in/mohammad-kasiri-979b8513a/"
+                target="_blank"
+                >Linkedin</a
+              >
+            </p>
+            <h3 class="section-heading">GitHub</h3>
+            <p class="section-text">
+              <a href="https://www.github.com/mo-kasiri" target="_blank"
+                >GitHub</a
+              >
+            </p>
+            <h3 class="section-heading">YouTube</h3>
+            <p class="section-text">
+              <a href="https://www.youtube.com/@mokasiri" target="_blank"
+                >YouTube</a
+              >
+            </p>
+            <h3 class="section-heading">Phone Number</h3>
+            <p class="section-text">(+98)9135937030</p>
+          </div>
+        </section>
+      </div>
+    </div>
 
-       </div>
-   </div>
-
-
-  <script type="module" src="/main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
